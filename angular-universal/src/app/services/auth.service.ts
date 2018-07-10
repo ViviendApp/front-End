@@ -18,6 +18,9 @@ export class AuthService {
   
   constructor(private afAuth : AngularFireAuth, private usersS : UsersService) { }
  
+  /**
+   * Da el usuario que tiene sesion iniciada
+   */
   getUser():Observable<IUser>{
     return this.afAuth.authState
     .take(1)
@@ -27,7 +30,9 @@ export class AuthService {
     });
    }
 
-
+   /**
+    * Inicia sesion
+    */
   login():Promise<void>{
    return  this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
     .then(result=>{

@@ -8,12 +8,19 @@ import { AngularFirestore, AngularFirestoreCollection } from '../../../node_modu
 })
 export class UsersService {
 
+    /**
+     * Coleccion de los usuarios registrados en la base de datos
+     */
     private users : AngularFirestoreCollection<IUser>;
 
     constructor(private afs:AngularFirestore){
 
     }
 
+    /**
+     * Anade usuario a la base de datos
+     * @param user 
+     */
     add(user: IUser):Promise<void>{
         return this.users.doc(user.uid).set(user).catch(console.log);
     }
