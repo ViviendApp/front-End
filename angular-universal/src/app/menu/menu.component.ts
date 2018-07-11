@@ -5,7 +5,7 @@ import { Router } from '../../../node_modules/@angular/router';
 @Component({
     selector: 'menu-component',
     templateUrl: 'menu.component.html',
-    styles: ["menu.component.css"]
+    styleUrls: ["menu.component.css"]
   })
   export class MenuComponent {
   

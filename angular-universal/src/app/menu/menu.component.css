@@ -1,0 +1,14 @@
+.navegacion{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10vw;
+    background: #f0ec12a6;
+    
+    color: #fff;
+}
+.navegacion .logo{
+
+}
+.navegacion .opciones{
+
+}
