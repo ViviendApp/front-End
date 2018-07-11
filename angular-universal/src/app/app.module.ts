@@ -4,6 +4,8 @@ import {RouterModule} from '@angular/router';
 
 import { AppComponent } from './base/app.component';
 import { HomeComponent } from './home/home.component';
+import { MenuComponent } from './menu/menu.component';
+
 import {TransferHttpCacheModule} from '@nguniversal/common';
 
 import { environment } from "../environments/environment";
@@ -29,6 +31,7 @@ import { InmueblesComponent } from './inmuebles/inmuebles.component';
     InmuebleComponent,
     NuevoInmuebleComponent,
     InmueblesComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'my-app'}),
