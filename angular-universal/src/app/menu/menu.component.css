@@ -1,14 +1,39 @@
+
 .navegacion{
     display: flex;
     justify-content: space-between;
     padding: 0 10vw;
-    background: #f0ec12a6;
+    background: #fff;
+    align-items: center;
+    color: var(--color-principal);
+    height: 10vh;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    position: fixed;
+    width: 100%;
     
-    color: #fff;
 }
-.navegacion .logo{
-
+.navegacion .logo a{
+    text-decoration: none;
+    color:var(--color-principal);
+}
+.navegacion .logo img {
+    max-width: 8vh;
+}
+.navegacion .logo p{
+    padding-left: 0.5em;
+    
+    float: right;
+    vertical-align: middle;
+    line-height: 8vh;
+    font-weight: bolder;
+    
 }
 .navegacion .opciones{
-
+    display: flex;
+    justify-content: space-between;
+}
+.navegacion .opciones a {
+    color: var(--color-principal);
+    text-decoration: none;
+    
 }

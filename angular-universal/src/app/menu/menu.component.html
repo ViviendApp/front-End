@@ -1,15 +1,11 @@
-<h1>Viviendapp</h1>
-<nav class="navegacion">
+ <nav class="navegacion">
     <div class="logo">
-        <img src="../../assets/img/logo.png" alt="">
+       <a routerLink=""> <img src="../../assets/img/logo.png" alt="">
+        <p>ViviendApp</p>   </a>
     </div>
     <div class="opciones">
-            <a routerLink="/">Viviendapp</a>
+            
             <a routerLink="/login" class="nav-login" *ngIf="(this.afAuth.auth.currentUser==null)">Iniciar Sesion</a>
             <a routerLink="" class="nav-logout" (click)="logout()" *ngIf="(this.afAuth.auth.currentUser!=null)">{{this.afAuth.auth.currentUser.displayName}}   Cerrar sesion</a>
     </div>
-   
-    
-
-
 </nav>
