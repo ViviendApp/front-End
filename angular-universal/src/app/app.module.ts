@@ -32,7 +32,7 @@ import { AngularFireDatabaseModule } from '../../node_modules/angularfire2/datab
     InmuebleComponent,
     NuevoInmuebleComponent,
     InmueblesComponent,
-    MenuComponent,
+    MenuComponent, 
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'my-app'}),
