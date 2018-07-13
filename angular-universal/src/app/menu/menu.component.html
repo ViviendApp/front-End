@@ -4,7 +4,8 @@
         <p>ViviendApp</p>   </a>
     </div>
     <div class="opciones">
-            
+            <a routerLink="/inmuebles" class="nav-login">Publicaciones</a>
+           
             <a routerLink="/login" class="nav-login" *ngIf="(this.afAuth.auth.currentUser==null)">Iniciar Sesion</a>
             <a routerLink="" class="nav-logout" (click)="logout()" *ngIf="(this.afAuth.auth.currentUser!=null)">{{this.afAuth.auth.currentUser.displayName}}   Cerrar sesion</a>
     </div>

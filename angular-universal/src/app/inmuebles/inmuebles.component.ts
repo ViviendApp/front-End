@@ -5,12 +5,12 @@ import { InmueblesService } from '../services/inmuebles.service';
  */
 @Component({
   selector: 'app-inmuebles',
-  template: './inmuebles.component.html',
+  templateUrl: './inmuebles.component.html',
   styles: []
 })
 export class InmueblesComponent implements OnInit {
 
-  constructor(private inmueblesS : InmueblesService) { }
+  constructor(public inmueblesS : InmueblesService) { }
 
   ngOnInit() {
   

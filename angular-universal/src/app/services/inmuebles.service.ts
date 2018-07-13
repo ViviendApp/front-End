@@ -24,7 +24,11 @@ export class InmueblesService {
     /**
      * Total de inmuebles en el RealTimeDatabase
      */
-    public inmueblesRTD :AngularFireList<IInmueble>;
+    public inmueblesRTD : AngularFireList<IInmueble>;
+
+    public posts : Observable<IInmueble[]>;
+
+
 
     constructor(public afs : AngularFirestore, private auth : AuthService, dataBase :AngularFireDatabase ){
         //Si se ha iniciado sesion, se obtiene el id del usuario
@@ -37,16 +41,18 @@ export class InmueblesService {
         //Obtiene la lista de inmuebles de la RealTimeDatabase
         this.inmueblesRTD= dataBase.list('/posts');
 
+        
 
-        //Actualiza la lista de inmuebles
-        // this.inmuebles=this.afs.collection('inmuebles').snapshotChanges().map(actions=>{
-        //     return actions.map(item=>{
-        //         const data=item.payload.doc.data() as IInmueble;
-        //         const id =item.payload.doc.id;
-        //         //Une al data y al id
-        //         return {...data,id};
-        //     });
-        // })
+        // Actualiza la lista de posts
+        this.posts=this.inmueblesCF.snapshotChanges().map(actions=>{
+            return actions.map(item=>{
+                const data=item.payload.doc.data() as IInmueble;
+                const id =item.payload.doc.id;
+            
+                //Une al data y al id
+                return {...data,id};
+            });
+        })
      }
 
      /**
@@ -66,11 +72,18 @@ export class InmueblesService {
         this.inmueblesRTD.push(inmueble);
     }
 
+
+
+    obtenerInmueble(postID:string) : Observable<IInmueble>{
+       return this.inmueblesCF.doc(postID).snapshotChanges().map(item=>{
+          const data=item.payload.data() as IInmueble; 
+            return data});
+       }
      /**
       * Actualiza los inmuebles del usuario que tiene sesion iniciada para que pueda editarlos
       */
      setInmueblesUsuario(){
 
      }
-
+     
 }

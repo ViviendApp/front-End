@@ -1,3 +1,3 @@
 <h2>Inmuebles</h2>
 <!-->Recorre los inmuebles del servicio inmueblesS que tiene la lista de inmuebles 'inmuebles'<!-->
-    <a routerLink="/inmuebles/{{inmueble.id}}" *ngFor="let inmueble of inmueblesS.inmuebles | async"><br></a>
+    <a routerLink="/inmuebles/{{inmueble.id}}" *ngFor="let inmueble of inmueblesS.posts | async">{{inmueble.title}}<br></a>
