@@ -21,7 +21,7 @@ export class InmuebleComponent implements OnInit {
     //Obtiene el id de la ruta
     this.idInmueble = this.route.snapshot.params.id;
     console.log(this.idInmueble);
-    this.inmueble = {id:'',titulo:'Hermoso apartamento',direccion : 'calle 500 #900-40', precio:0}
+    //this.inmueble = {id:'',titulo:'Hermoso apartamento',direccion : 'calle 500 #900-40', precio:0}
   }
 
 }

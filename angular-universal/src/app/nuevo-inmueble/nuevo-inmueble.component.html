@@ -1,6 +1,9 @@
 <h2>Nuevo inmueble</h2>
-<h2>Titulo de publicacion: <input type="text" [(ngModel)]="inmueble.titulo"> </h2>
+<h2>Titulo de publicacion: <input type="text" [(ngModel)]="inmueble.title"> </h2>
 <ul>
-    <li>Direccion: <input type="text" [(ngModel)]="inmueble.direccion"></li>
-    <li>Precio: <input type="text" [(ngModel)]="inmueble.precio"></li>
+    <li>Direccion: <input type="text" [(ngModel)]="inmueble.place"></li>
+    <li>Precio: <input type="text" [(ngModel)]="inmueble.price"></li>
+    <li>PROVISIONAL post ID: <input type="text" [(ngModel)]="inmueble.postID"></li>
 </ul>
+<button (click)="publicarCF()">Publicar Cloud firestore</button>
+<button (click)="publicarRTD()">Publicar Realtime database</button>

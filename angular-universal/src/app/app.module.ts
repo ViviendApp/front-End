@@ -22,6 +22,7 @@ import { FormsModule } from "@angular/forms";
 import { NuevoInmuebleComponent } from './nuevo-inmueble/nuevo-inmueble.component';
 import { InmueblesService } from './services/inmuebles.service';
 import { InmueblesComponent } from './inmuebles/inmuebles.component';
+import { AngularFireDatabaseModule } from '../../node_modules/angularfire2/database';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { InmueblesComponent } from './inmuebles/inmuebles.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
-    FormsModule
+    FormsModule,
+    AngularFireDatabaseModule
   ],
   providers: [AuthService,UsersService, AuthGuard, InmueblesService],
   bootstrap: [AppComponent]
