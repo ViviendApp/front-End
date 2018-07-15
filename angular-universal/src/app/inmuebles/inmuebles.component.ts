@@ -15,10 +15,14 @@ export class InmueblesComponent implements OnInit {
 
   public publicaciones : Observable<IInmueble[]>;
 
-  constructor(public inmueblesS : InmueblesService) { }
+  constructor(public inmueblesS : InmueblesService) { 
+    
+  }
 
   ngOnInit() {
+    this.inmueblesS.updatePosts();
     this.publicaciones = this.inmueblesS.posts;
+   
   }
 
 }

@@ -23,6 +23,7 @@ import { NuevoInmuebleComponent } from './nuevo-inmueble/nuevo-inmueble.componen
 import { InmueblesService } from './services/inmuebles.service';
 import { InmueblesComponent } from './inmuebles/inmuebles.component';
 import { AngularFireDatabaseModule } from '../../node_modules/angularfire2/database';
+import { ErrorNotFoundComponent } from './error-not-found/error-not-found.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { AngularFireDatabaseModule } from '../../node_modules/angularfire2/datab
     NuevoInmuebleComponent,
     InmueblesComponent,
     MenuComponent,
+    ErrorNotFoundComponent,
 
   ],
   imports: [

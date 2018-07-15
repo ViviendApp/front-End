@@ -40,29 +40,27 @@ export class InmueblesService {
         this.inmueblesCF = afs.collection<IInmueble>('posts');
 
         //Obtiene la lista de inmuebles de la RealTimeDatabase
-        this.inmueblesRTD= dataBase.list('/posts');
+        // this.inmueblesRTD= dataBase.list('/posts');
 
-        
-        //FAVOR NO BORRAR
         // Actualiza la lista de posts con el cloud fire
-        // this.posts=this.inmueblesCF.snapshotChanges().map(actions=>{
-        //     return actions.map(item=>{
-        //         const data=item.payload.doc.data() as IInmueble;
-        //         const id =item.payload.doc.id;
-            
-        //         //Une al data y al id
-        //         return {...data,id};
-        //     });
-        // })
-
-        //Actualiza la lista de posts con el realtime database
-        this.posts=this.inmueblesRTD.snapshotChanges().map(actions=>{
+        this.posts=this.inmueblesCF.snapshotChanges().map(actions=>{
             return actions.map(item=>{
-                const data=item.payload.val() as IInmueble;
-                const id =item.payload.key;
+                const data=item.payload.doc.data() as IInmueble;
+                const id =item.payload.doc.id;
+            
+                //Une al data y al id
                 return {...data,id};
             });
         })
+
+        //Actualiza la lista de posts con el realtime database
+        // this.posts=this.inmueblesRTD.snapshotChanges().map(actions=>{
+        //     return actions.map(item=>{
+        //         const data=item.payload.val() as IInmueble;
+        //         const id =item.payload.key;
+        //         return {...data,id};
+        //     });
+        // })
 
      }
 
@@ -112,5 +110,19 @@ export class InmueblesService {
      setInmueblesUsuario(){
 
      }
+
+     
+     updatePosts(){
+        this.posts=this.inmueblesCF.snapshotChanges().map(actions=>{
+            return actions.map(item=>{
+                const data=item.payload.doc.data() as IInmueble;
+                const id =item.payload.doc.id;
+            
+                //Une al data y al id
+                return {...data,id};
+            });
+        })
+     }
+    
      
 }

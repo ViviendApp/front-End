@@ -3,3 +3,9 @@
     <li>Direccion: {{inmueble.place}}</li>
     <li>Precio: {{inmueble.price}}</li>
 </ul>
+<button *ngIf="(!verContacto)" (click)="solicitarInformacionContacto()">Solicitar informacion de contacto</button>
+<span *ngIf="(verContacto)">Informacion de contacto <i class="fas fa-angle-double-down"></i></span>
+<ul *ngIf="(verContacto)">
+    <li>Correo: {{inmueble.email}}</li>
+    <li>Telefono: {{inmueble.phone}}</li>
+</ul>
