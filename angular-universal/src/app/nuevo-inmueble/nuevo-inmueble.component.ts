@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { IInmueble } from '../structures/inmueble';
 import { AuthService } from '../services/auth.service';
 import { InmueblesService } from '../services/inmuebles.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nuevo-inmueble',
   templateUrl: './nuevo-inmueble.component.html',
-  styles: []
+  styleUrls: ['./nuevo-inmueble.component.css']
 })
 export class NuevoInmuebleComponent implements OnInit {
 
@@ -22,7 +23,15 @@ export class NuevoInmuebleComponent implements OnInit {
   }
 
   publicarCF(){
-    this.inmueblesS.addCF(this.inmueble).then(console.log);
+    this.inmueblesS.addCF(this.inmueble).then(
+      (e)=>{
+
+      /**
+       * router.ir(postID)
+       * enviar exito o fracaso de el post en el controlador de alertas
+       */
+    } 
+  );
   }
   publicarRTD(){
     this.inmueblesS.addRTD(this.inmueble);
