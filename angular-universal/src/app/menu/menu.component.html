@@ -6,8 +6,14 @@
     <div class="opciones">
             <a routerLink="/inmuebles" class="nav-login">Publicaciones</a>
            
-            <a routerLink="/login" class="nav-login" *ngIf="(this.afAuth.auth.currentUser==null)">Iniciar Sesion</a>
-            <a routerLink="/publicar" *ngIf="(this.afAuth.auth.currentUser!=null)">Publicar</a>
-            <app-log-out></app-log-out>
+            <a routerLink="/login" class="nav-login boton" *ngIf="(this.afAuth.auth.currentUser==null)"><p>Iniciar Sesión</p></a>
+            <a routerLink="/publicar" class="nav-login" *ngIf="(this.afAuth.auth.currentUser!=null)">Publicar</a>
+            <a class="nav-login drop" *ngIf="(this.afAuth.auth.currentUser!=null)"><i class="fas fa-user-circle " tabindex="0" ></i> <ul>
+                  <li class="name">{{this.afAuth.auth.currentUser.displayName}}</li>
+
+                  <li><a routerLink="" class="nav-logout" (click)="logout()">Cerrar Sesion</a></li>
+                </ul>
+            </a> 
+            
       </div>
 </nav>

@@ -10,7 +10,9 @@ import { Router } from '../../../node_modules/@angular/router';
 export class LoginComponent implements OnInit {
 
 
-  constructor(private auth:AuthService, public router : Router) {  }
+  constructor(private auth:AuthService, public router : Router) { 
+
+   }
 
 
   ngOnInit() {
@@ -20,5 +22,6 @@ export class LoginComponent implements OnInit {
     this.auth.login().then(()=> this.router.navigate(["/"]));
 
   }
+
   
 }

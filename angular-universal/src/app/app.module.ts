@@ -23,7 +23,7 @@ import { NuevoInmuebleComponent } from './nuevo-inmueble/nuevo-inmueble.componen
 import { InmueblesService } from './services/inmuebles.service';
 import { InmueblesComponent } from './inmuebles/inmuebles.component';
 import { AngularFireDatabaseModule } from '../../node_modules/angularfire2/database';
-import { LogOutComponent } from './log-out/log-out.component';
+
 
 @NgModule({
   declarations: [
@@ -34,7 +34,7 @@ import { LogOutComponent } from './log-out/log-out.component';
     NuevoInmuebleComponent,
     InmueblesComponent,
     MenuComponent,
-    LogOutComponent, 
+
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'my-app'}),

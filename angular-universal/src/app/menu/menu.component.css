@@ -37,3 +37,66 @@
     text-decoration: none;
     
 }
+.navegacion .nav-login{
+    padding: 10px;
+    color: var(--color-principal);
+    text-decoration: none;
+}
+.navegacion .boton {
+    margin-left: 10px;
+    background: var(--color-principal);
+    color: #fff;
+    border-radius: 2px;
+    padding: 10px 12px;
+
+}
+.navegacion .boton p{
+    color: #fff;
+}
+.drop {
+    position: relative;
+  }
+  .drop ul {
+    padding-left: 0px;
+    right: auto;
+    position: absolute;
+    left: 0;
+    top: 3em;
+    background: #fff;
+    transition: all 0.3s ease;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transform-origin: 0 0;
+            transform-origin: 0 0;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 8px 0 rgba(0, 0, 0, 0.12);
+  }
+  .drop ul li {
+    display: block;
+    width: 100%;
+  }
+  .drop ul li a {
+    width: 100%;
+    padding: 1em 18px;
+    display: inline-block;
+    white-space: pre;
+    box-sizing: border-box;
+  }
+  .drop ul li a:hover{
+    background: var(--color-principal);
+    color: #fff;
+  }
+
+  .drop:hover ul,
+  .drop:focus ul 
+  {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  .drop .name{
+    padding: 1em 18px;
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+    display: inline-block;
+    white-space: pre;
+    box-sizing: border-box;    
+  }
