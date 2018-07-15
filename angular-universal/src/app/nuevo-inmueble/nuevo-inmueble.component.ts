@@ -17,7 +17,8 @@ export class NuevoInmuebleComponent implements OnInit {
 
   ngOnInit() {
     this.authS.getUser();
-    this.inmueble = {postID:'',date:'',email : this.authS.getUserObject().email, phone : 0, place : '', price : 0, sold : false, title : '', userID : this.authS.getUserObject().uid}
+    
+    this.inmueble = {postID:'',date:this.obtenerFecha(),email : this.authS.getUserObject().email, phone : 0, place : '', price : 0, sold : false, title : '', userID : this.authS.getUserObject().uid}
   }
 
   publicarCF(){
@@ -25,6 +26,23 @@ export class NuevoInmuebleComponent implements OnInit {
   }
   publicarRTD(){
     this.inmueblesS.addRTD(this.inmueble);
+  }
+  obtenerFecha():string{
+    var resp='';
+    var today = new Date();
+    var d = today.getDate();
+    var m = today.getMonth()+1; //January is 0!
+    var yyyy = today.getFullYear();
+    if(d<10) {
+        resp = '0';
+    } 
+    resp=resp+d+'/';
+
+    if(m<10) {
+        resp=resp+'0';
+    } 
+    resp=resp+m+'/'+yyyy;
+    return resp;
   }
 
 }
