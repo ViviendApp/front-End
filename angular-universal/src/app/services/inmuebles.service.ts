@@ -4,6 +4,7 @@ import { AuthService } from "./auth.service";
 import { IInmueble } from "../structures/inmueble";
 import { Observable } from "../../../node_modules/rxjs";
 import { AngularFireDatabase, AngularFireList } from "angularfire2/database"; 
+import { DataSnapshot } from "../../../node_modules/angularfire2/database/interfaces";
 
 @Injectable()
 export class InmueblesService {
@@ -88,16 +89,8 @@ export class InmueblesService {
      * Obtiene el inmueble del RealTimeDatabase
      * @param postID 
      */
-    obtenerInmuebleRTD(postID:string): IInmueble{
-        var k;
-        this.dataBase.database.ref('posts/'+postID).once("value").then(function(snapshot){ 
-            var res =snapshot.val();
-            console.log(res);
-            k=res;
-            this.retornarV(res)
-        });
-        console.log(k);
-        return null;
+    obtenerInmuebleRTD(postID:string): Promise<DataSnapshot>{
+        return this.dataBase.database.ref('posts/'+postID).once("value");;
     }
     retornarV(res:IInmueble){
         return res;

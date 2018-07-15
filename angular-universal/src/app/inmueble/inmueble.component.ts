@@ -22,14 +22,26 @@ export class InmuebleComponent implements OnInit {
     //Obtiene el id de la ruta
     this.idInmueble = this.route.snapshot.params.id;
     console.log(this.idInmueble);
+    //Obtiene el imueble desde la firecloud
+    this.obtenerInmuebleFD();
+    //Obtiene el imbueble desde la realtime
+    // this.obtenerInmuebleRTD();
+}
+  obtenerInmuebleFD(){
     this.inmueblesS.obtenerInmueble(this.idInmueble).subscribe(inmu=>{
       this.inmueble=inmu;
-  });
-    //this.inmueble = {id:'',titulo:'Hermoso apartamento',direccion : 'calle 500 #900-40', precio:0}
+    });
   }
 
   obtenerInmuebleRTD(){
-    console.log(this.inmueblesS.obtenerInmuebleRTD(this.idInmueble).postID);
+    this.inmueblesS.obtenerInmuebleRTD(this.idInmueble).then(inmu=>{
+      console.log(inmu.val());
+      this.inmueble=inmu.val();
+    });
+    // .then(function(snap){
+    //   this.inmueble=snap.val;
+    // });
+    console.log();
   }
 
 }
