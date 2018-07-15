@@ -80,7 +80,7 @@ export class InmueblesService {
       */
      addRTD(inmueble : IInmueble) :void{
         //REAL TIME DATABASE:
-        this.inmueblesRTD.push(inmueble);
+       // this.inmueblesRTD.push(inmueble);
         this.dataBase.database.ref('posts/'+inmueble.postID).set(inmueble);
     }
 

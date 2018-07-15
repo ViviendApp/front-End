@@ -21,7 +21,6 @@ export class InmuebleComponent implements OnInit {
   ngOnInit() {
     //Obtiene el id de la ruta
     this.idInmueble = this.route.snapshot.params.id;
-    console.log(this.idInmueble);
     //Obtiene el imueble desde la firecloud
     this.obtenerInmuebleFD();
     //Obtiene el imbueble desde la realtime
