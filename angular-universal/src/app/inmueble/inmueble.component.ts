@@ -22,9 +22,9 @@ export class InmuebleComponent implements OnInit {
     //Obtiene el id de la ruta
     this.idInmueble = this.route.snapshot.params.id;
     //Obtiene el imueble desde la firecloud
-    this.obtenerInmuebleFD();
+    // this.obtenerInmuebleFD();
     //Obtiene el imbueble desde la realtime
-    // this.obtenerInmuebleRTD();
+    this.obtenerInmuebleRTD();
 }
   obtenerInmuebleFD(){
     this.inmueblesS.obtenerInmueble(this.idInmueble).subscribe(inmu=>{
@@ -34,13 +34,8 @@ export class InmuebleComponent implements OnInit {
 
   obtenerInmuebleRTD(){
     this.inmueblesS.obtenerInmuebleRTD(this.idInmueble).then(inmu=>{
-      console.log(inmu.val());
       this.inmueble=inmu.val();
     });
-    // .then(function(snap){
-    //   this.inmueble=snap.val;
-    // });
-    console.log();
   }
 
 }
