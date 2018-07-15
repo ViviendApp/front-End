@@ -28,4 +28,8 @@ export class InmuebleComponent implements OnInit {
     //this.inmueble = {id:'',titulo:'Hermoso apartamento',direccion : 'calle 500 #900-40', precio:0}
   }
 
+  obtenerInmuebleRTD(){
+    console.log(this.inmueblesS.obtenerInmuebleRTD(this.idInmueble).postID);
+  }
+
 }

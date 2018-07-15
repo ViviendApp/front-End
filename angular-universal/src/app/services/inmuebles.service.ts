@@ -30,7 +30,7 @@ export class InmueblesService {
 
 
 
-    constructor(public afs : AngularFirestore, private auth : AuthService, dataBase :AngularFireDatabase ){
+    constructor(public afs : AngularFirestore, private auth : AuthService,private dataBase :AngularFireDatabase ){
         //Si se ha iniciado sesion, se obtiene el id del usuario
         this.auth.getUser().subscribe(user=>{
             this.uid=user.uid;
@@ -70,15 +70,39 @@ export class InmueblesService {
      addRTD(inmueble : IInmueble) :void{
         //REAL TIME DATABASE:
         this.inmueblesRTD.push(inmueble);
+        this.dataBase.database.ref('posts/'+inmueble.postID).set(inmueble);
     }
 
 
-
+    /**
+     * Obtiene el inmueble del cloud fire
+     * @param postID 
+     */
     obtenerInmueble(postID:string) : Observable<IInmueble>{
        return this.inmueblesCF.doc(postID).snapshotChanges().map(item=>{
           const data=item.payload.data() as IInmueble; 
             return data});
-       }
+    }
+
+    /**
+     * Obtiene el inmueble del RealTimeDatabase
+     * @param postID 
+     */
+    obtenerInmuebleRTD(postID:string): IInmueble{
+        var k;
+        this.dataBase.database.ref('posts/'+postID).once("value").then(function(snapshot){ 
+            var res =snapshot.val();
+            console.log(res);
+            k=res;
+            this.retornarV(res)
+        });
+        console.log(k);
+        return null;
+    }
+    retornarV(res:IInmueble){
+        return res;
+    }
+
      /**
       * Actualiza los inmuebles del usuario que tiene sesion iniciada para que pueda editarlos
       */
