@@ -1,0 +1,38 @@
+#container {
+    height: 90vh;
+    background-color: #9260f0;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 16rem;
+    position: relative;
+    margin-bottom: 1rem;
+}
+h1:before{
+
+        position: absolute;
+        content: '';
+        height: 0.5rem;
+        bottom: 0.2rem; 
+        margin: 0 auto;
+		  left: 0;
+        right: 0;
+		  width: 85%;
+		  background: #fff;
+		  -o-transition:.5s;
+  		  -ms-transition:.5s;
+        -moz-transition:.5s;
+        -webkit-transition:.5s;
+        transition:.5s;
+
+}
+
+h2 {
+    font-size: 3rem;
+    color: #ad8ff4;
+}
