@@ -24,15 +24,22 @@ export class NuevoInmuebleComponent implements OnInit {
   }
 
   publicarCF(){
-    this.inmueblesS.addCF(this.inmueble).catch((e)=>{
-        this.error('Error creando la publicación: '+e )       
-    })
-    .then(
-      ()=>{
-        this.router.navigate(["/"]);
-        this.success('Creado Inmueble');
-    } 
-  );
+    try {
+        this.inmueblesS.addCF(this.inmueble)
+          .then(
+              ()=>{
+                  this.router.navigate(["/"]);
+                  this.success('Creado Inmueble');
+                  } 
+              );
+        }
+    catch(err) {
+      if(err == "FirebaseError: [code=invalid-argument]: Document path must be a non-empty string")
+        this.error("Los campos no pueden estar vacios.")
+      else 
+        this.error('Error creando la publicación: '+err )    
+    }
+
   }
   publicarRTD(){
     this.inmueblesS.addRTD(this.inmueble);
