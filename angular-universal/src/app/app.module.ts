@@ -22,8 +22,9 @@ import { FormsModule } from "@angular/forms";
 import { NuevoInmuebleComponent } from './nuevo-inmueble/nuevo-inmueble.component';
 import { InmueblesService } from './services/inmuebles.service';
 import { InmueblesComponent } from './inmuebles/inmuebles.component';
-import { AngularFireDatabaseModule } from '../../node_modules/angularfire2/database';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { ErrorNotFoundComponent } from './error-not-found/error-not-found.component';
+
 
 
 @NgModule({

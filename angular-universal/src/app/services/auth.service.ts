@@ -26,7 +26,7 @@ export class AuthService {
     .take(1)
     .filter(user=>!!user)
     .map((user:firebase.User)=>{
-      return user as IUser;
+      return (user) as IUser;
     });
    }
 
@@ -44,7 +44,7 @@ export class AuthService {
    * Devuelve el usuario que inicio sesion, solo usar si se sabe que ha iniciado sesion un usuario
    */
   getUserObject() : IUser{
-    return {name: this.afAuth.auth.currentUser.displayName, uid: this.afAuth.auth.currentUser.uid, email: this.afAuth.auth.currentUser.email}
+    return {name: this.afAuth.auth.currentUser.displayName, uid: this.afAuth.auth.currentUser.uid, email: this.afAuth.auth.currentUser.email, isStudent:false}
   }
   
   
