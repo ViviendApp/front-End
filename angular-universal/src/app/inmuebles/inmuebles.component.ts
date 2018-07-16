@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { InmueblesService } from '../services/inmuebles.service';
 import { Observable } from '../../../node_modules/rxjs';
-import { IInmueble } from '../structures/inmueble';
+import { IInmueble } from '../models/inmueble';
 /**
  * Se visualizan todos los inmuebles 
  */

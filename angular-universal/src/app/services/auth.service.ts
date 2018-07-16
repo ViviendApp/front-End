@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth} from 'angularfire2/auth';
 
-import { IUser } from '../structures/users';
+import { IUser } from '../models/users';
 
 import * as firebase from 'firebase/app';
 import 'rxjs/add/operator/map';

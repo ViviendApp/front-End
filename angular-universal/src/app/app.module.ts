@@ -24,6 +24,8 @@ import { InmueblesService } from './services/inmuebles.service';
 import { InmueblesComponent } from './inmuebles/inmuebles.component';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { ErrorNotFoundComponent } from './error-not-found/error-not-found.component';
+import { AlertComponent } from './alert/alert.component';
+import { AlertService } from './services/alert.service';
 
 
 
@@ -37,6 +39,7 @@ import { ErrorNotFoundComponent } from './error-not-found/error-not-found.compon
     InmueblesComponent,
     MenuComponent,
     ErrorNotFoundComponent,
+    AlertComponent
 
   ],
   imports: [
@@ -49,7 +52,7 @@ import { ErrorNotFoundComponent } from './error-not-found/error-not-found.compon
     FormsModule,
     AngularFireDatabaseModule
   ],
-  providers: [AuthService,UsersService, AuthGuard, InmueblesService],
+  providers: [AuthService,UsersService, AuthGuard, InmueblesService,AlertService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

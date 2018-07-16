@@ -1,7 +1,7 @@
 import { Injectable } from "../../../node_modules/@angular/core";
 import { AngularFirestore, AngularFirestoreCollection } from "../../../node_modules/angularfire2/firestore";
 import { AuthService } from "./auth.service";
-import { IInmueble } from "../structures/inmueble";
+import { IInmueble } from "../models/inmueble";
 import { Observable } from "../../../node_modules/rxjs";
 import { AngularFireDatabase, AngularFireList } from "angularfire2/database"; 
 import { DataSnapshot } from "../../../node_modules/angularfire2/database/interfaces";

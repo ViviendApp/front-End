@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IUser } from '../structures/users';
+import { IUser } from '../models/users';
 import { Observable } from '../../../node_modules/rxjs';
 import { AngularFirestore, AngularFirestoreCollection } from '../../../node_modules/angularfire2/firestore';
 

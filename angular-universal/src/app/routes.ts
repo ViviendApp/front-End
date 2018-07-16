@@ -12,5 +12,5 @@ export const routes = [
     { path: 'inmuebles', component: InmueblesComponent, pathMatch: 'full'},  
     { path: 'inmuebles/:id', component: InmuebleComponent, pathMatch: 'full'},  
     { path: 'publicar', component: NuevoInmuebleComponent, pathMatch: 'full',canActivate:[AuthGuard]}, 
-    { path: 'notfound', component: ErrorNotFoundComponent, pathMatch: 'full'} 
+    { path: '404', component: ErrorNotFoundComponent, pathMatch: 'full'} 
   ]
