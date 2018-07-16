@@ -24,13 +24,11 @@ export class NuevoInmuebleComponent implements OnInit {
   }
 
   publicarCF(){
-    this.inmueblesS.addCF(this.inmueble).then(
-      (e)=>{
-
-      /**
-       * router.ir(postID)
-       * enviar exito o fracaso de el post en el controlador de alertas
-       */
+    this.inmueblesS.addCF(this.inmueble).catch((e)=>{
+        this.error('Error creando la publicación: '+e )       
+    })
+    .then(
+      ()=>{
         this.router.navigate(["/"]);
         this.success('Creado Inmueble');
     } 
