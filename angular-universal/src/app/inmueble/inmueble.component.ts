@@ -41,7 +41,7 @@ export class InmuebleComponent implements OnInit {
     this.inmueblesS.obtenerInmueble(this.idInmueble).subscribe(inmu=>{
       this.inmueble=inmu;
       if(this.inmueble==null)
-      this.router.navigate(["/notfound"])
+      this.router.navigate(["/404"])
 
     });
   }
