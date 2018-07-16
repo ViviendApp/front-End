@@ -20,9 +20,14 @@ export class LoginComponent implements OnInit {
     this.auth.getUser().subscribe(console.log);
   }
   login(){
-    this.auth.login().catch().then(()=> {
-      this.usersS.add(this.auth.getUserObject());
-      this.router.navigate(["/"])});
+    this.auth.login()
+      .catch()
+      .then(
+        ()=> {
+          this.usersS.add(this.auth.getUserObject());
+          this.router.navigate(["/"])
+        }
+      );
 
   }
 

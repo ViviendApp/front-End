@@ -3,6 +3,7 @@ import { IInmueble } from '../models/inmueble';
 import { AuthService } from '../services/auth.service';
 import { InmueblesService } from '../services/inmuebles.service';
 import { Router } from '@angular/router';
+import { AlertService } from '../services/alert.service';
 
 @Component({
   selector: 'app-nuevo-inmueble',
@@ -14,7 +15,7 @@ export class NuevoInmuebleComponent implements OnInit {
   
   public inmueble : IInmueble;
 
-  constructor(private authS: AuthService, private inmueblesS: InmueblesService) { }
+  constructor(private authS: AuthService, private inmueblesS: InmueblesService, public router : Router,private alertService: AlertService) { }
 
   ngOnInit() {
     this.authS.getUser();
@@ -30,6 +31,8 @@ export class NuevoInmuebleComponent implements OnInit {
        * router.ir(postID)
        * enviar exito o fracaso de el post en el controlador de alertas
        */
+        this.router.navigate(["/"]);
+        this.success('Creado Inmueble');
     } 
   );
   }
@@ -53,5 +56,32 @@ export class NuevoInmuebleComponent implements OnInit {
     resp=resp+m+'/'+yyyy;
     return resp;
   }
+  success(message: string) { 
+    this.alertService.success(message);
+  }
+
+  error(message: string) {
+    this.alertService.error(message);
+  }
+
+  info(message: string) {
+    this.alertService.info(message);
+  }
+
+  warn(message: string) {
+    this.alertService.warn(message);
+  }
+
+  clear() {
+    this.alertService.clear();
+  }
+
+
+
+
+
+
+
+
 
 }
