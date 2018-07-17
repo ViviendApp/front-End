@@ -42,6 +42,10 @@
     padding: 10px;
     color: var(--color-principal);
     text-decoration: none;
+    line-height: 2em;
+}
+.fa-user-circle{
+    font-size: 2em;
 }
 .navegacion .boton {
     margin-left: 10px;
