@@ -23,17 +23,13 @@ export class NuevoInmuebleComponent implements OnInit {
     this.inmueble = {postID:'',date:this.obtenerFecha(),email : this.authS.getUserObject().email, phone : 0, place : '', price : 0, sold : false, title : '', userID : this.authS.getUserObject().uid}
   }
 
-  publicarCF(){
+  async publicarCF(){
     try {
-        this.inmueblesS.addCF(this.inmueble)
-          .then(
-              ()=>{
-                  this.router.navigate(["/"]);
-                  this.success('Creado Inmueble');
-                  } 
-              );
-        }
-    catch(err) {
+      await this.inmueblesS
+        .addCF(this.inmueble);
+      this.router.navigate(["/"]);
+      this.success('Creado Inmueble');
+    } catch(err) {
       if(err == "FirebaseError: [code=invalid-argument]: Document path must be a non-empty string")
         this.error("Los campos no pueden estar vacios.")
       else 
