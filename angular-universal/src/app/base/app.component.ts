@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-
+import { Router } from '../../../node_modules/@angular/router';
 import { MenuComponent } from '../menu/menu.component';
 
 
@@ -11,7 +11,7 @@ import { MenuComponent } from '../menu/menu.component';
 })
 export class AppComponent {
 
-  constructor(){
+  constructor(private router : Router){
 
   }
   ngOnInit(){
