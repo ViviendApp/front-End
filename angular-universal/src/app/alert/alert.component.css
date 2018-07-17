@@ -22,15 +22,15 @@
 .alert a{
     cursor: pointer;
 }
-.alert-success{
-    background: #00c851f2;
+.alert.alert-success{
+    background: rgba(0,200,81,0.7);
 }
-.alert-warning{
-    background: #ffc107f2;
+.alert.alert-warning{
+    background: rgba(255,193,7,0.7);
 }
-.alert-danger{
-    background: #ff4f5ef2;
+.alert.alert-danger{
+    background: rgba(255,79,94,0.7);
 }
-.alert-info{
-    background: #007bfff2;
+.alert.alert-info{
+    background: rgba(0,123,255,0.7);
 }
