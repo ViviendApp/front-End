@@ -1,9 +1,9 @@
-import { Injectable } from "../../../node_modules/@angular/core";
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from "../../../node_modules/@angular/router";
-import { Observable } from "../../../node_modules/rxjs";
-import { AngularFireAuth } from "../../../node_modules/angularfire2/auth";
+import { Injectable } from "@angular/core";
+import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from "@angular/router";
+import { Observable } from "rxjs";
+import { AngularFireAuth } from "angularfire2/auth";
 
-import * as firebase from 'firebase/app';
+import * as firebase from 'firebase';
 import 'rxjs/add/operator/do';
 
 @Injectable()

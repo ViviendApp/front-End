@@ -3,11 +3,11 @@ import { AngularFireAuth} from 'angularfire2/auth';
 
 import { IUser } from '../models/users';
 
-import * as firebase from 'firebase/app';
+import * as firebase from 'firebase';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/take';
 import 'rxjs/add/operator/filter';
-import { Observable } from '../../../node_modules/rxjs';
+import { Observable } from 'rxjs';
 import { UsersService } from './users.service';
 
 @Injectable({

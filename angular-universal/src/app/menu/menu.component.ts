@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
-import { AngularFireAuth } from '../../../node_modules/angularfire2/auth';
-import { Router } from '../../../node_modules/@angular/router';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'menu-component',
