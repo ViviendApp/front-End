@@ -26,6 +26,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { ErrorNotFoundComponent } from './error-not-found/error-not-found.component';
 import { AlertComponent } from './alert/alert.component';
 import { AlertService } from './services/alert.service';
+import { MustLogOut } from './guards/mustLogOut.guard.service';
 
 
 
@@ -52,7 +53,7 @@ import { AlertService } from './services/alert.service';
     FormsModule,
     AngularFireDatabaseModule
   ],
-  providers: [AuthService,UsersService, AuthGuard, InmueblesService,AlertService],
+  providers: [AuthService,UsersService, AuthGuard, InmueblesService,AlertService,MustLogOut],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
