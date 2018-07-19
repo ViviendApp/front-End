@@ -1,6 +1,6 @@
 div.background{
     background: linear-gradient(to right,var(--color-azul-secundario-light), var(--color-azul-secundario-lighty), var(--color-azul-secundario-darky), var(--color-azul-secundario-dark));
-    height: 100vh;
+    height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;

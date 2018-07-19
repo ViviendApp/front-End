@@ -27,6 +27,9 @@ import { ErrorNotFoundComponent } from './error-not-found/error-not-found.compon
 import { AlertComponent } from './alert/alert.component';
 import { AlertService } from './services/alert.service';
 import { MustLogOut } from './guards/mustLogOut.guard.service';
+import { DropZoneComponent } from './nuevo-inmueble/drop-zone/drop-zone.component';
+import { FileSizePipe } from './pipes/filesize.pipe';
+import { AngularFireStorage, AngularFireStorageModule } from 'angularfire2/storage';
 
 
 
@@ -40,7 +43,10 @@ import { MustLogOut } from './guards/mustLogOut.guard.service';
     InmueblesComponent,
     MenuComponent,
     ErrorNotFoundComponent,
-    AlertComponent
+    AlertComponent,
+    DropZoneComponent,
+    FileSizePipe,
+    
 
   ],
   imports: [
@@ -51,9 +57,10 @@ import { MustLogOut } from './guards/mustLogOut.guard.service';
     AngularFireAuthModule,
     AngularFirestoreModule,
     FormsModule,
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+
   ],
-  providers: [AuthService,UsersService, AuthGuard, InmueblesService,AlertService,MustLogOut],
+  providers: [AuthService,UsersService, AuthGuard, InmueblesService,AlertService,MustLogOut,AngularFireStorage],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
