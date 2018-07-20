@@ -30,7 +30,7 @@ import { MustLogOut } from './guards/mustLogOut.guard.service';
 import { DropZoneComponent } from './nuevo-inmueble/drop-zone/drop-zone.component';
 import { FileSizePipe } from './pipes/filesize.pipe';
 import { AngularFireStorage, AngularFireStorageModule } from 'angularfire2/storage';
-
+import { DropZoneDirective } from './directives/drop-zone.directive';
 
 
 @NgModule({
@@ -46,6 +46,7 @@ import { AngularFireStorage, AngularFireStorageModule } from 'angularfire2/stora
     AlertComponent,
     DropZoneComponent,
     FileSizePipe,
+    DropZoneDirective
     
 
   ],
@@ -58,9 +59,10 @@ import { AngularFireStorage, AngularFireStorageModule } from 'angularfire2/stora
     AngularFirestoreModule,
     FormsModule,
     AngularFireDatabaseModule,
+    AngularFireStorageModule
 
   ],
-  providers: [AuthService,UsersService, AuthGuard, InmueblesService,AlertService,MustLogOut,AngularFireStorage],
+  providers: [AuthService,UsersService, AuthGuard, InmueblesService,AlertService,MustLogOut,AngularFireStorage,DropZoneDirective],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

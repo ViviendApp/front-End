@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireStorage, AngularFireUploadTask } from 'angularfire2/storage';
 import { Observable } from 'rxjs/Observable';
 import { finalize } from 'rxjs/operators';
+import { DropZoneDirective }from '../../directives/drop-zone.directive';
 
 
 @Component({
