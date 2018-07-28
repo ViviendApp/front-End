@@ -6,7 +6,7 @@ import { DropZoneDirective }from '../../directives/drop-zone.directive';
 
 
 @Component({
-    selector:'drop-zone',
+    selector:'drop-zone-component',
     templateUrl:'drop-zone.component.html',
     styleUrls:['drop-zone.component.css']
 })

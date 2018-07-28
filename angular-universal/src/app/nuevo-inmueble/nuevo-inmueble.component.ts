@@ -5,6 +5,8 @@ import { InmueblesService } from '../services/inmuebles.service';
 import { Router } from '@angular/router';
 import { AlertService } from '../services/alert.service';
 
+import { DropZoneComponent } from './drop-zone/drop-zone.component'
+
 @Component({
   selector: 'app-nuevo-inmueble',
   templateUrl: './nuevo-inmueble.component.html',
