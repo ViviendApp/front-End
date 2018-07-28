@@ -3,17 +3,30 @@
        <a routerLink=""> <img src="../../assets/img/logo.png" alt="">
         <p>ViviendApp</p>   </a>
     </div>
-    <div class="opciones">
-            <a routerLink="/inmuebles" class="nav-login">Publicaciones</a>
-           
-            <a routerLink="/login" class="nav-login boton" *ngIf="(this.afAuth.auth.currentUser==null)"><p>Iniciar Sesión</p></a>
-            <a routerLink="/publicar" class="nav-login" *ngIf="(this.afAuth.auth.currentUser!=null)">Publicar</a>
-            <a class="nav-login drop" *ngIf="(this.afAuth.auth.currentUser!=null)"><i class="fas fa-user-circle " tabindex="0" ></i> <ul>
-                  <li class="name">{{this.afAuth.auth.currentUser.displayName}}</li>
-
-                  <li><a routerLink="" class="nav-logout" (click)="logout()">Cerrar Sesion</a></li>
-                </ul>
-            </a> 
+    <div *ngIf="(this.afAuth.auth.currentUser==null);then notLogged else logged"></div>
+    
+    
+            <ng-template #notLogged>
+                        <div class="opciones">
+                              <a routerLink="/inmuebles" class="nav-login">Publicaciones</a>
+                              <a routerLink="/login" class="nav-login boton"><p>Iniciar Sesión</p></a> 
+                        </div>          
+            </ng-template>
+           <ng-template #logged>
+                  <div class="opciones">
+                        <a routerLink="/inmuebles" class="nav-login">Publicaciones</a>
+                        <a routerLink="/publicar" class="nav-login">Publicar</a>
+                        <a class="nav-login drop" >
+                              <i class="fas fa-user-circle " tabindex="0" ></i> 
+                              <ul>
+                                    <li class="name">{{this.afAuth.auth.currentUser.displayName}}</li>
+                                    <li><a routerLink="" class="nav-logout" (click)="logout()">Cerrar Sesion</a></li>
+                              </ul>
+                        </a> 
+                  </div> 
+            </ng-template>
             
-      </div>
+            
+            
+
 </nav>

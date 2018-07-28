@@ -1,0 +1,107 @@
+
+h1{
+    font-weight: 900;
+    font-size: 2em;
+}
+section{
+    
+    width: 80vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    background: #fff;
+    margin-bottom: 5vw;
+    
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+section .heading{
+    padding: 2vw 3vw;
+    color: #fff;
+    background: var(--color-principal)
+}
+section .form{
+    padding: 0 3vw 3vw 3vw;
+}
+
+.form__group {
+    position: relative;
+    padding: 15px 0 0;
+    margin-top: 10px;
+    margin-top: 10px;
+  }
+  
+.form__field {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid #d2d2d2;
+    outline: 0;
+    font-size: 16px;
+    color: #212121;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+  }
+  
+.form__field::placeholder {
+    color: transparent;
+  }
+  
+.form__field:placeholder-shown ~ .form__label {
+    font-size: 16px;
+    cursor: text;
+    top: 20px;
+  }
+  
+label,
+.form__field:focus ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 12px;
+    color: #9b9b9b;
+  }
+  
+.form__field:focus ~ .form__label {
+    color: var(--color-principal);
+  }
+  
+.form__field:focus {
+    padding-bottom: 6px;
+    border-bottom: 2px solid var(--color-principal);
+  }
+.dropdown{
+    margin-top: 20px;
+    width: 0px;
+}
+div.boton{
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+
+  }
+ button{
+    
+    background: var(--color-principal);
+    color: #fff;
+    padding: 1em;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12);
+    font-size: 20px;
+    border-radius: 2px;
+    text-align: center;
+    outline: none;
+
+}
+.ripple {
+    background-position: center;
+    transition: background 0.8s;
+  }
+  .ripple:hover {
+    background: #1FE5B2 radial-gradient(circle, transparent 1%, #1FE5B2 1%) center/15000%;
+  }
+  .ripple:active {
+    background-color: #22FFC5;
+    background-size: 100%;
+    transition: background 0s;
+  }

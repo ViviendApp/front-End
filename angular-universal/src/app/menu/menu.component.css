@@ -11,6 +11,7 @@
     position: fixed;
     width: 100%;
     top: 0;
+    z-index: 9999;
     
 }
 .navegacion .logo a{
@@ -63,16 +64,16 @@
   }
   .drop ul {
     padding-left: 0px;
-    right: auto;
+    right: 0;
     position: absolute;
-    left: 0;
+    left: auto;
     top: 3em;
     background: #fff;
     transition: all 0.3s ease;
     -webkit-transform: scale(0);
             transform: scale(0);
-    -webkit-transform-origin: 0 0;
-            transform-origin: 0 0;
+    -webkit-transform-origin: right top;
+            transform-origin: right top;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 8px 0 rgba(0, 0, 0, 0.12);
   }
   .drop ul li {

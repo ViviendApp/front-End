@@ -2,24 +2,26 @@
 
 
 
-     <h3>AngularFire Drop Zone</h3>
+     <h3>Arrastra y suelta una imagen</h3>
 
      <div class="file">
-        <label class="file-label">
+        <button class="file-label" for="drag">
+            <span class="file-cta">
+                <span class="file-icon">
+                  <i class="fa fa-upload"></i>
+                </span>
+                <span class="file-label">
+                  o elige una imagen
+                </span>
+              </span>
+            </button>
 
 
-        <input class="file-input" type="file" (change)="startUpload($event.target.files)">
-
-
-          <span class="file-cta">
-            <span class="file-icon">
-              <i class="fa fa-upload"></i>
-            </span>
-            <span class="file-label">
-              or choose a file…
-            </span>
-          </span>
-        </label>
+        <input class="file-input" type="file" name="drag"(change)="startUpload($event.target.files)">
+        
+          
+          
+        
       </div>
 </div>
 <div *ngIf="percentage | async as pct">
