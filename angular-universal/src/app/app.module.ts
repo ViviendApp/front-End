@@ -1,5 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import {RouterModule} from '@angular/router';
 
 import { AppComponent } from './base/app.component';
@@ -63,6 +63,9 @@ import { DropZoneDirective } from './directives/drop-zone.directive';
 
   ],
   providers: [AuthService,UsersService, AuthGuard, InmueblesService,AlertService,MustLogOut,AngularFireStorage,DropZoneDirective],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+],
 })
 export class AppModule { }

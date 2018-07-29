@@ -1,3 +1,22 @@
-<h2>Inmuebles</h2>
+
 <!-->Recorre los inmuebles del servicio inmueblesS que tiene la lista de inmuebles 'inmuebles'<!-->
-    <a routerLink="/inmuebles/{{inmueble.id}}" *ngFor="let inmueble of publicaciones | async">{{inmueble.title}}<br></a>
+    <section class="inmuebles-wrapper">
+        <h2>Inmuebles</h2>
+            <div *ngFor="let inmueble of publicaciones | async">
+                    <inmueble-card-component link="{{inmueble.id}}" >
+
+                            
+                    </inmueble-card-component>
+            </div>
+        
+         
+        
+        
+        
+            
+            <br>
+        
+        
+  
+    </section>
+    

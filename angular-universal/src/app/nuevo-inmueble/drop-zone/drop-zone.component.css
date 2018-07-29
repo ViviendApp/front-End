@@ -44,5 +44,11 @@
   
   progress::-webkit-progress-value {
     transition: width 0.1s ease;
+    background: var(--color-principal);
+  }
+  progress{
+    background: var(--color-principal);
+    border-radius: 2px;
+    width: 100%;
   }
   
