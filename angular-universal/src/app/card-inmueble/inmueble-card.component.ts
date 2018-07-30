@@ -11,7 +11,8 @@ import { Component,OnInit, Input } from '@angular/core';
         @Input() link:string;
         @Input() price:string;
         @Input() directions:string;
-        @Input() state:boolean;
+        @Input() img:string;
+        @Input() state:string;
         
 
 

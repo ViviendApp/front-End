@@ -3,7 +3,7 @@
     <section class="inmuebles-wrapper">
         <h2>Inmuebles</h2>
             <div *ngFor="let inmueble of publicaciones | async">
-                    <inmueble-card-component link="{{inmueble.id}}" >
+                    <inmueble-card-component link="{{inmueble.id}}" name="{{inmueble.title}}" img="" price="" >
 
                             
                     </inmueble-card-component>
