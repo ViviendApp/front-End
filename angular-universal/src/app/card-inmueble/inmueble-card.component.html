@@ -1,10 +1,15 @@
-
-        <a routerLink="/inmuebles/{{link}}">
-        
-            <h1>Hola</h1>
-        
+<a routerLink="/inmuebles/{{link}}">
+    <div class="caja"> 
+            <div class="principal" [ngStyle]="getCssImg()">
+                
+            </div>
+            <div class="desc">
+                    <h1>{{price}}</h1>
+                    <h5>{{title}}</h5>
+                    <h6>{{desc}}</h6>
+            </div>
             
-            <br>
-        
-        
-        </a>
+            
+
+    </div>
+</a>

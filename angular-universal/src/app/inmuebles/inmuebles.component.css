@@ -1,5 +1,8 @@
+:host{
+    width: 100%;
+}
 .inmuebles-wrapper{
     margin: 5vh 10vw;
     padding: 2vw 3vw;
-    
+    max-width: 100%;
 }

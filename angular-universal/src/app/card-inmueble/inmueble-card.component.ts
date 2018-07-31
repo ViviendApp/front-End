@@ -11,15 +11,18 @@ import { Component,OnInit, Input } from '@angular/core';
         @Input() link:string;
         @Input() price:string;
         @Input() directions:string;
-        @Input() img:string;
+        @Input() img:any;
         @Input() state:string;
         
 
-
+        
 
 
         constructor(){
 
         }
-
+        getCssImg(){
+          this.img= 'https://i.ytimg.com/vi/_cgLtcsM8Dk/maxresdefault.jpg';
+          return {'background':'url('+this.img+')'};
+        }
   }

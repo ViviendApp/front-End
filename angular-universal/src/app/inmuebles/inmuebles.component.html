@@ -1,20 +1,19 @@
 
 <!-->Recorre los inmuebles del servicio inmueblesS que tiene la lista de inmuebles 'inmuebles'<!-->
-    <section class="inmuebles-wrapper">
+    <section class="inmuebles-wrapper" style="max-width: 100%;">
         <h2>Inmuebles</h2>
-            <div *ngFor="let inmueble of publicaciones | async">
-                    <inmueble-card-component link="{{inmueble.id}}" name="{{inmueble.title}}" img="" price="" >
-
-                            
-                    </inmueble-card-component>
-            </div>
+        <div style="display: flex; flex-wrap:wrap; justify-content: space-between;">
+                <inmueble-card-component link="{{inmueble.id}}" title="{{inmueble.title}}" img="" price="{{inmueble.price}}" *ngFor="let inmueble of publicaciones | async"> 
+                </inmueble-card-component>
+        </div>
+                    
         
          
         
         
         
             
-            <br>
+        
         
         
   
