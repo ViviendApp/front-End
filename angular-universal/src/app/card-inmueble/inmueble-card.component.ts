@@ -10,7 +10,7 @@ import { Component,OnInit, Input } from '@angular/core';
         @Input() title:string;
         @Input() link:string;
         @Input() price:string;
-        @Input() directions:string;
+        @Input() place:string;
         @Input() img:any;
         @Input() state:string;
         
