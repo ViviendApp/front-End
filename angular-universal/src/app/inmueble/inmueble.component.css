@@ -1,0 +1,23 @@
+:host{
+    background: #e6e6e6;
+}
+.contenedor{
+    margin: 5vh 10vw;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    border-radius: 5px;
+}
+.heading{
+    color:#fff;
+}
+.heading .barra{
+    background: var(--color-principal);
+    color:inherit;
+    padding: 2vh 3vw;
+    
+}
+.heading .imagen img{
+    max-width: 100%;
+}
+.main-info{
+    padding: 2vh 3vw;
+}

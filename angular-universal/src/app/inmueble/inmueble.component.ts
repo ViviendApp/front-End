@@ -12,7 +12,7 @@ import { InmueblesService } from '../services/inmuebles.service';
   styleUrls: ['./inmueble.component.css']
 })
 export class InmuebleComponent implements OnInit {
-
+  public img: string ='https://i.ytimg.com/vi/_cgLtcsM8Dk/maxresdefault.jpg';
   public inmueble : IInmueble;
   public idInmueble : string;
   /**
@@ -54,5 +54,8 @@ export class InmuebleComponent implements OnInit {
   solicitarInformacionContacto(){
     this.verContacto=true;
   }
+
+
+    
 
 }

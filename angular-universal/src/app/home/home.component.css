@@ -1,3 +1,8 @@
+.banner{
+    height: 40vh;
+    background: var(--color-principal);
+}
+
 #homeScreen{
     height: 90vh;
     
