@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { AngularFireStorage, AngularFireUploadTask } from 'angularfire2/storage';
 import { Observable } from 'rxjs/Observable';
 import { finalize } from 'rxjs/operators';
@@ -12,6 +12,7 @@ import { DropZoneDirective }from '../../directives/drop-zone.directive';
 })
 export class DropZoneComponent {
 
+    @Input() idInmueble : string;
 
     // Main task 
   task: AngularFireUploadTask;
@@ -43,7 +44,7 @@ export class DropZoneComponent {
             }
 
             // The storage path
-            const path = `test/${new Date().getTime()}_${file.name}`;
+            const path = `posts/${this.idInmueble}/${new Date().getTime()}_${file.name}`;
 
             // Totally optional metadata
             const customMetadata = { app: 'My AngularFire-powered PWA!' };
