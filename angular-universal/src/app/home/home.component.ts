@@ -1,5 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import { AlertService } from '../services/alert.service';
+import { InmueblesCardComponent } from '../card-inmueble/inmueble-card.component';
+import { InmueblesService }from '../services/inmuebles.service';
+import { Observable } from 'rxjs';
+import { IInmueble } from '../models/inmueble';
 
 @Component({
   selector: 'app-home',
@@ -8,11 +12,14 @@ import { AlertService } from '../services/alert.service';
 })
 export class HomeComponent implements OnInit {
   
+  public publicaciones : Observable<IInmueble[]>;
 
-  constructor(private alertService: AlertService) { }
+  constructor(private alertService: AlertService, private inmueblesS : InmueblesService) { }
 
   ngOnInit() {
-    
+    this.inmueblesS.updatePosts();
+    this.publicaciones = this.inmueblesS.posts;
+   
   }
   success(message: string) { 
     this.alertService.success(message);

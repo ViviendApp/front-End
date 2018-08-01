@@ -1,10 +1,26 @@
 .banner{
     height: 40vh;
     background: var(--color-principal);
+    padding: 5vh 10vw;
+}
+.banner h1{
+    font-size: 6em;
+    color: #fff;
+    text-align: center;
+}
+.banner h6{
+    font-size: 1.5em;
+    color: #fff;
+    text-align: right;
+
+}
+.articles-1{
+    display: flex;
+    flex-wrap: wrap;
 }
 
-#homeScreen{
-    height: 90vh;
+#alerts{
+    height: 10vh;
     
 }
 #homeScreen h1{

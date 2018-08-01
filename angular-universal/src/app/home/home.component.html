@@ -1,8 +1,26 @@
 <main>
     <section class="banner">
-
+        <h1>ViviendApp</h1>
+        <h6>Encuentra vivienda universitaria facilmente.</h6>
     </section>
-    <section id="homeScreen">
+    <section class="articles-1">
+      <inmueble-card-component *ngFor="let inmueble of publicaciones | async"></inmueble-card-component>  
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section id="alerts">
         <h1>ViviendApp</h1>
         <button class="btn btn-success" (click)="success('Success!!')">Success</button>
         <button class="btn btn-danger" (click)="error('Error :(')">Error</button>

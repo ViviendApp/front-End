@@ -10,12 +10,13 @@ section{
     margin-right: 10vw;
     background: #fff;
     margin-bottom: 5vw;
-    
+    border-radius: 5px;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 section .heading{
     padding: 2vw 3vw;
     color: #fff;
+    border-radius: 5px 5px 0px 0px;
     background: var(--color-principal)
 }
 section .form{
