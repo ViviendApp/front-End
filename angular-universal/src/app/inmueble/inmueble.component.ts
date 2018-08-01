@@ -9,7 +9,7 @@ import { InmueblesService } from '../services/inmuebles.service';
 @Component({
   selector: 'app-inmueble',
   templateUrl: './inmueble.component.html',
-  styles: []
+  styleUrls: ['./inmueble.component.css']
 })
 export class InmuebleComponent implements OnInit {
 

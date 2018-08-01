@@ -19,7 +19,7 @@
     color:var(--color-principal);
 }
 .navegacion .logo img {
-    max-width: 8vh;
+    max-height: 7vh;
 }
 .navegacion .logo p{
     padding-left: 0.5em;

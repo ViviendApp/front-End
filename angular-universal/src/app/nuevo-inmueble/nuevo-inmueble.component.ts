@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,ViewChild,AfterViewInit, OnInit } from '@angular/core';
 import { IInmueble } from '../models/inmueble';
 import { AuthService } from '../services/auth.service';
 import { InmueblesService } from '../services/inmuebles.service';
@@ -12,10 +12,12 @@ import { DropZoneComponent } from './drop-zone/drop-zone.component'
   templateUrl: './nuevo-inmueble.component.html',
   styleUrls: ['./nuevo-inmueble.component.css']
 })
-export class NuevoInmuebleComponent implements OnInit {
+export class NuevoInmuebleComponent implements OnInit, AfterViewInit {
 
   
   public inmueble : IInmueble;
+  public publicable : boolean = false;
+  @ViewChild(DropZoneComponent) child: DropZoneComponent;
 
   constructor(private authS: AuthService, private inmueblesS: InmueblesService, public router : Router,private alertService: AlertService) { }
 
@@ -24,8 +26,10 @@ export class NuevoInmuebleComponent implements OnInit {
     
     this.inmueble = {postID:'',date:this.obtenerFecha(),email : this.authS.getUserObject().email, phone : 0, place : '', price : 0, sold : false, title : '', userID : this.authS.getUserObject().uid}
   }
-
   async publicarCF(){
+    if(this.publicable){
+
+    
     try {
       await this.inmueblesS
         .addCF(this.inmueble);
@@ -36,8 +40,10 @@ export class NuevoInmuebleComponent implements OnInit {
         this.error("Los campos no pueden estar vacios.")
       else 
         this.error('Error creando la publicación: '+err )    
+      }
+    }else{
+      this.error('No se pudo publicar por un error al momento de guardar la imagen en la base de datos.')
     }
-
   }
   publicarRTD(){
     this.inmueblesS.addRTD(this.inmueble);
@@ -79,7 +85,10 @@ export class NuevoInmuebleComponent implements OnInit {
     this.alertService.clear();
   }
 
-
+  ngAfterViewInit() {
+    this.publicable = true;
+    
+  }
 
 
 
