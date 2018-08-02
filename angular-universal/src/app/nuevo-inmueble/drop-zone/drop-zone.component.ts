@@ -28,6 +28,10 @@ export class DropZoneComponent {
 
   // State for dropzone CSS toggling
   isHovering: boolean;
+
+  //Arreglo de imagenes subidas
+  images : string[];
+
     constructor(private inmueblesS: InmueblesService,private storage: AngularFireStorage){    }
 
         toogleHover(event:boolean){
@@ -35,16 +39,30 @@ export class DropZoneComponent {
         }
 
         startUpload(event:FileList){
-            
-            this.task=this.inmueblesS.startUploadImg(event,this.idInmueble);
+            // The File object
+            const file = event.item(0)
 
+            // Client-side validation example
+            if (file.type.split('/')[0] !== 'image') { 
+            console.error('unsupported file type :( ')
+            return;
+            }
+
+            // The storage path
+            const path = `posts/${this.idInmueble}/${new Date().getTime()}_${file.name}`;
             
+            // Totally optional metadata
+            const customMetadata = { app: 'My AngularFire-powered PWA!' };
+
+            // Inmuebles service upload the image
+            this.task=this.inmueblesS.startUploadImg(event,path,file,customMetadata);
+
             // Progress monitoring
             this.percentage = this.task.percentageChanges();
             this.snapshot   = this.task.snapshotChanges()
 
             // The file's download URL
-            //this.snapshot.pipe(finalize(() => this.downloadURL = this.storage.ref(path).getDownloadURL())).subscribe();
+            this.snapshot.pipe(finalize(() => this.downloadURL = this.storage.ref(path).getDownloadURL())).subscribe();
         }
          // Determines if the upload task is active
             isActive(snapshot) {

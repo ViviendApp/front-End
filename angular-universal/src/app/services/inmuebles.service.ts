@@ -128,23 +128,9 @@ export class InmueblesService {
 
 
      //STORAGE IMAGENES
-     startUploadImg (event:FileList, idInmueble : string,) : AngularFireUploadTask {
+     startUploadImg (event:FileList, path : string, file:any , customMetadata: any) : AngularFireUploadTask {
         var task: AngularFireUploadTask;
-        // The File object
-        const file = event.item(0)
-
-        // Client-side validation example
-        if (file.type.split('/')[0] !== 'image') { 
-        console.error('unsupported file type :( ')
-        return;
-        }
-
-        // The storage path
-        const path = `posts/${idInmueble}/${new Date().getTime()}_${file.name}`;
-
-        // Totally optional metadata
-        const customMetadata = { app: 'My AngularFire-powered PWA!' };
-
+        
         // The main task
         task = this.storage.upload(path, file, { customMetadata })
 
