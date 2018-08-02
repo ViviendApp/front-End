@@ -5,6 +5,7 @@ import { IInmueble } from "../models/inmueble";
 import { Observable } from "rxjs";
 import { AngularFireDatabase, AngularFireList } from "angularfire2/database"; 
 import { DataSnapshot } from "angularfire2/database/interfaces";
+import { AngularFireStorage,AngularFireUploadTask } from "../../../node_modules/angularfire2/storage";
 
 @Injectable()
 export class InmueblesService {
@@ -31,7 +32,7 @@ export class InmueblesService {
 
 
 
-    constructor(public afs : AngularFirestore, private auth : AuthService,private dataBase :AngularFireDatabase ){
+    constructor(public afs : AngularFirestore, private auth : AuthService,private dataBase :AngularFireDatabase, private storage: AngularFireStorage ){
         //Si se ha iniciado sesion, se obtiene el id del usuario
         this.auth.getUser().subscribe(user=>{
             this.uid=user.uid;
@@ -123,6 +124,39 @@ export class InmueblesService {
             });
         })
      }
+
+
+
+     //STORAGE IMAGENES
+     startUploadImg (event:FileList, idInmueble : string,) : AngularFireUploadTask {
+        var task: AngularFireUploadTask;
+        // The File object
+        const file = event.item(0)
+
+        // Client-side validation example
+        if (file.type.split('/')[0] !== 'image') { 
+        console.error('unsupported file type :( ')
+        return;
+        }
+
+        // The storage path
+        const path = `posts/${idInmueble}/${new Date().getTime()}_${file.name}`;
+
+        // Totally optional metadata
+        const customMetadata = { app: 'My AngularFire-powered PWA!' };
+
+        // The main task
+        task = this.storage.upload(path, file, { customMetadata })
+
+        console.log(this.storage.ref(path).getDownloadURL());
+        return task;
+
+        // Progress monitoring
+        // this.percentage = this.task.percentageChanges();
+        // this.snapshot   = this.task.snapshotChanges()
+
+        // The file's download URL
+    }
     
      
 }

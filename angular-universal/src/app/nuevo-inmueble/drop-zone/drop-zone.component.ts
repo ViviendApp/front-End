@@ -3,6 +3,7 @@ import { AngularFireStorage, AngularFireUploadTask } from 'angularfire2/storage'
 import { Observable } from 'rxjs/Observable';
 import { finalize } from 'rxjs/operators';
 import { DropZoneDirective }from '../../directives/drop-zone.directive';
+import { InmueblesService } from '../../services/inmuebles.service';
 
 
 @Component({
@@ -27,37 +28,23 @@ export class DropZoneComponent {
 
   // State for dropzone CSS toggling
   isHovering: boolean;
-    constructor(private storage: AngularFireStorage){    }
+    constructor(private inmueblesS: InmueblesService,private storage: AngularFireStorage){    }
 
         toogleHover(event:boolean){
             this.isHovering = event;
         }
 
         startUpload(event:FileList){
-            // The File object
-            const file = event.item(0)
+            
+            this.task=this.inmueblesS.startUploadImg(event,this.idInmueble);
 
-            // Client-side validation example
-            if (file.type.split('/')[0] !== 'image') { 
-            console.error('unsupported file type :( ')
-            return;
-            }
-
-            // The storage path
-            const path = `posts/${this.idInmueble}/${new Date().getTime()}_${file.name}`;
-
-            // Totally optional metadata
-            const customMetadata = { app: 'My AngularFire-powered PWA!' };
-
-            // The main task
-            this.task = this.storage.upload(path, file, { customMetadata })
-
+            
             // Progress monitoring
             this.percentage = this.task.percentageChanges();
             this.snapshot   = this.task.snapshotChanges()
 
             // The file's download URL
-            this.snapshot.pipe(finalize(() => this.downloadURL = this.storage.ref(path).getDownloadURL())).subscribe();
+            //this.snapshot.pipe(finalize(() => this.downloadURL = this.storage.ref(path).getDownloadURL())).subscribe();
         }
          // Determines if the upload task is active
             isActive(snapshot) {
