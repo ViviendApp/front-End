@@ -3,7 +3,7 @@ export interface IInmueble{
     date : string;
     desc ?: {comoditics: string , info : string};
     email : string;
-    images ?: {idUnico:string};
+    images ?: {idUnico:string}[];
     phone : number;
     place : string;
     price : number;

@@ -24,7 +24,7 @@ export class NuevoInmuebleComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     this.authS.getUser();
     
-    this.inmueble = {postID:'',date:this.obtenerFecha(),email : this.authS.getUserObject().email, phone : 0, place : '', price : 0, sold : false, title : '', userID : this.authS.getUserObject().uid}
+    this.inmueble = {images:[],postID:'',date:this.obtenerFecha(),email : this.authS.getUserObject().email, phone : 0, place : '', price : 0, sold : false, title : '', userID : this.authS.getUserObject().uid}
   }
   async publicarCF(){
     if(this.publicable){
@@ -48,6 +48,12 @@ export class NuevoInmuebleComponent implements OnInit, AfterViewInit {
   publicarRTD(){
     this.inmueblesS.addRTD(this.inmueble);
   }
+
+  anadirRuta(ev:any){
+    this.inmueble.images.push(ev);
+
+  }
+
   obtenerFecha():string{
     var resp='';
     var today = new Date();

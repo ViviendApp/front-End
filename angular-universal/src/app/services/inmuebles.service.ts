@@ -134,14 +134,7 @@ export class InmueblesService {
         // The main task
         task = this.storage.upload(path, file, { customMetadata })
 
-        console.log(this.storage.ref(path).getDownloadURL());
         return task;
-
-        // Progress monitoring
-        // this.percentage = this.task.percentageChanges();
-        // this.snapshot   = this.task.snapshotChanges()
-
-        // The file's download URL
     }
     
      

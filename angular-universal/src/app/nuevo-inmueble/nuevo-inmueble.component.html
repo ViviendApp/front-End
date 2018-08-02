@@ -14,7 +14,7 @@
                         </div>
                         
                             <h3 style="display: block; margin-top: 20px; margin-bottom: -30px;">Imagen</h3><br>
-                            <drop-zone-component [idInmueble]="inmueble.postID"></drop-zone-component>
+                            <drop-zone-component [idInmueble]="inmueble.postID" (rutaFoto)="anadirRuta($event)"  ></drop-zone-component>
                         
                         
                         <div class="form__group">

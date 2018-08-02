@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { AngularFireStorage, AngularFireUploadTask } from 'angularfire2/storage';
 import { Observable } from 'rxjs/Observable';
 import { finalize } from 'rxjs/operators';
@@ -14,6 +14,7 @@ import { InmueblesService } from '../../services/inmuebles.service';
 export class DropZoneComponent {
 
     @Input() idInmueble : string;
+    @Output() rutaFoto = new EventEmitter<string>();
 
     // Main task 
   task: AngularFireUploadTask;
@@ -62,7 +63,14 @@ export class DropZoneComponent {
             this.snapshot   = this.task.snapshotChanges()
 
             // The file's download URL
-            this.snapshot.pipe(finalize(() => this.downloadURL = this.storage.ref(path).getDownloadURL())).subscribe();
+            this.snapshot.pipe(finalize(() => {this.downloadURL = this.storage.ref(path).getDownloadURL()
+                
+                this.downloadURL.subscribe(val => {console.log(77777);console.log(val); 
+                
+                    //Manda el evento de que se subio una foto
+                    this.rutaFoto.emit(val);
+                    });
+            })).subscribe();
         }
          // Determines if the upload task is active
             isActive(snapshot) {
