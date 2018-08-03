@@ -42,7 +42,11 @@ export class InmuebleComponent implements OnInit {
       this.inmueble=inmu;
       if(this.inmueble==null)
       this.router.navigate(["/404"])
-
+      if(this.inmueble.images!=null)
+      {
+        if(this.inmueble.images[0]!=null)
+          this.img=this.inmueble.images[0];
+      }
     });
   }
 
