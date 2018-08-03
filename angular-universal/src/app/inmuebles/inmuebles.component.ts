@@ -23,7 +23,7 @@ export class InmueblesComponent implements OnInit {
   ngOnInit() {
     this.inmueblesS.updatePosts();
     this.publicaciones = this.inmueblesS.posts;
-   
+    const inmuebl:IInmueble=null;
   }
 
 }

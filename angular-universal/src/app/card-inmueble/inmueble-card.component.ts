@@ -1,4 +1,5 @@
 import { Component,OnInit, Input } from '@angular/core';
+import { IInmueble } from '../models/inmueble';
 
 
 @Component({
@@ -22,7 +23,12 @@ import { Component,OnInit, Input } from '@angular/core';
 
         }
         getCssImg(){
-          this.img= 'https://i.ytimg.com/vi/_cgLtcsM8Dk/maxresdefault.jpg';
+          if(this.img==null)
+            this.img=  'https://i.ytimg.com/vi/_cgLtcsM8Dk/maxresdefault.jpg';
+          if(this.img=='')
+            this.img=  'https://i.ytimg.com/vi/_cgLtcsM8Dk/maxresdefault.jpg';
+            
+
           return {'background':'url('+this.img+')'};
         }
   }
