@@ -14,7 +14,7 @@ import { IInmueble } from '../models/inmueble';
         @Input() place:string;
         @Input() img:any;
         @Input() state:string;
-        
+        @Input() desc:string;
 
         
 
