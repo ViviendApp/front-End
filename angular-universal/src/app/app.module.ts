@@ -32,6 +32,7 @@ import { FileSizePipe } from './pipes/filesize.pipe';
 import { AngularFireStorage, AngularFireStorageModule } from 'angularfire2/storage';
 import { DropZoneDirective } from './directives/drop-zone.directive';
 import { InmueblesCardComponent } from './card-inmueble/inmueble-card.component'
+import { ProfileComponent } from './profile/profile.component';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { InmueblesCardComponent } from './card-inmueble/inmueble-card.component'
     DropZoneComponent,
     FileSizePipe,
     DropZoneDirective,
-    InmueblesCardComponent
+    InmueblesCardComponent,
+    ProfileComponent
     
 
   ],
