@@ -41,12 +41,17 @@ export class AuthService {
   }
 
   /**
-   * Devuelve el usuario que inicio sesion, solo usar si se sabe que ha iniciado sesion un usuario
+   * Devuelve el usuario que inicio sesion, null si no hay.
    */
   getUserObject() : IUser{
+    if(this.afAuth.auth.currentUser==null)
+    return null;
+
     return {name: this.afAuth.auth.currentUser.displayName, uid: this.afAuth.auth.currentUser.uid, email: this.afAuth.auth.currentUser.email, isStudent:false}
   }
-  
+  logout() : Promise<void>{
+    return this.afAuth.auth.signOut()
+  }
   
   
 

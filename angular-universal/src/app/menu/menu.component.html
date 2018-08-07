@@ -3,7 +3,7 @@
        <a routerLink=""> <img src="../../assets/img/1x/logotipo.png" alt="">
         </a>
     </div>
-    <div *ngIf="(this.afAuth.auth.currentUser==null);then notLogged else logged"></div>
+    <div *ngIf="(this.auth.getUserObject()==null);then notLogged else logged"></div>
     
     
             <ng-template #notLogged>
@@ -19,7 +19,7 @@
                         <a class="nav-login drop" >
                               <i class="fas fa-user-circle " tabindex="0" ></i> 
                               <ul>
-                                    <li class="name">{{this.afAuth.auth.currentUser.displayName}}</li>
+                                    <li class="name">{{this.auth.getUserObject().name}}</li>
                                     <li><a routerLink="" class="nav-logout" (click)="logout()">Cerrar Sesion</a></li>
                               </ul>
                         </a> 
