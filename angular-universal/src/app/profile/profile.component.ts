@@ -10,13 +10,13 @@ import { AngularFireAuth } from 'angularfire2/auth';
   })
   export class ProfileComponent implements OnInit{
     public estaLogueado:boolean;
-    constructor(private auth:AuthService, public router : Router,public afAuth:AngularFireAuth){
-      this.estaLogueado = this.afAuth.auth.currentUser!=null;
+    constructor(private auth:AuthService, public router : Router){
+      
     }
 
     ngOnInit(){
       //Si esta logueado despliegue profile else router.redirect to /login
-      if(!this.estaLogueado)
+      if(this.auth.getUserObject==null)
       { 
         console.log("entro aqui ++")
         this.router.navigate(['/login']);
