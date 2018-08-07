@@ -14,15 +14,6 @@ import { AngularFireAuth } from 'angularfire2/auth';
       
     }
 
-    ngOnInit(){
-      //Si esta logueado despliegue profile else router.redirect to /login
-      if(this.auth.getUserObject==null)
-      { 
-        console.log("entro aqui ++")
-        this.router.navigate(['/login']);
-      }else{
-        console.log("entro aqui --");
-        this.router.navigate(['/profile']);
-      }
-    }
+    ngOnInit(){  }
+    
   }
