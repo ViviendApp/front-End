@@ -71,7 +71,8 @@ export class InmueblesService {
       */
      addCF(inmueble : IInmueble) :Promise<void>{
          //ClOUD FIRESTORE:
-         return this.inmueblesCF.doc(inmueble.postID).set(inmueble).catch(console.log);
+         this.inmueblesCF.add(inmueble).catch(console.log);
+         return null;
      }
      /**
       * Anade en el realtime database

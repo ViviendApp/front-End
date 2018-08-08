@@ -9,9 +9,9 @@ import { AngularFireAuth } from 'angularfire2/auth';
     styleUrls: ['./profile.component.css']
   })
   export class ProfileComponent implements OnInit{
-    public estaLogueado:boolean;
+    public user:any;
     constructor(private auth:AuthService, public router : Router){
-      
+      this.user= auth.getUserObject;
     }
 
     ngOnInit(){  }
