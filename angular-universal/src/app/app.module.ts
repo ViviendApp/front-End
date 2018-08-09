@@ -33,6 +33,7 @@ import { AngularFireStorage, AngularFireStorageModule } from 'angularfire2/stora
 import { DropZoneDirective } from './directives/drop-zone.directive';
 import { InmueblesCardComponent } from './card-inmueble/inmueble-card.component'
 import { ProfileComponent } from './profile/profile.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -50,9 +51,8 @@ import { ProfileComponent } from './profile/profile.component';
     FileSizePipe,
     DropZoneDirective,
     InmueblesCardComponent,
-    ProfileComponent
-    
-
+    ProfileComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'my-app'}),

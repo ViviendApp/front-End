@@ -5,6 +5,7 @@ import { InmueblesService }from '../services/inmuebles.service';
 import { Observable } from 'rxjs';
 import { IInmueble } from '../models/inmueble';
 import {} from '../inmuebles/inmuebles.component';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',

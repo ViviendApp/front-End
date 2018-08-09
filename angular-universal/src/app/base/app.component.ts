@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuComponent } from '../menu/menu.component';
+import { FooterComponent} from '../footer/footer.component';
 
 
 

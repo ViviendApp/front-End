@@ -1,0 +1,30 @@
+footer{
+    height:auto;
+    background: #232323;
+    margin: 0;
+    padding: 0;  
+}
+.row{
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+}
+.column{
+    color: #fff;
+    width:33.333%;
+    padding: 10vh;
+}
+.column h3{
+    font-size: 2em;
+    padding: 0 0 10px 0;
+}
+.column ul{
+    list-style: none;
+    padding: 0;
+}
+.column ul li{
+    padding: 0 0 3px 0;
+}
+.column img{
+    max-width: 22vw;
+}
