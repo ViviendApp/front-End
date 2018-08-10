@@ -1,5 +1,7 @@
 import { Component,OnInit, Input } from '@angular/core';
 import { IInmueble } from '../models/inmueble';
+import { SliderImgComponent } from '../slider-img/slider-img.component';
+
 
 
 @Component({
@@ -12,7 +14,6 @@ import { IInmueble } from '../models/inmueble';
         @Input() link:string;
         @Input() price:string;
         @Input() place:string;
-        @Input() img:any;
         @Input() state:string;
         @Input() desc:string;
 
@@ -22,13 +23,5 @@ import { IInmueble } from '../models/inmueble';
         constructor(){
 
         }
-        getCssImg(){
-          if(this.img==null)
-            this.img=  'https://i.ytimg.com/vi/_cgLtcsM8Dk/maxresdefault.jpg';
-          if(this.img=='')
-            this.img=  'https://i.ytimg.com/vi/_cgLtcsM8Dk/maxresdefault.jpg';
-            
 
-          return {'background':'url('+this.img+')'};
-        }
   }

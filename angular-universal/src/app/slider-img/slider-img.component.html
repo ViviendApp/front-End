@@ -1,0 +1,9 @@
+<div class="slider">
+        <ngb-carousel *ngIf="images" [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="showNavigationIndicators">
+                <ng-template ngbSlide >
+                    <ng-content select="img">
+                    </ng-content>
+                </ng-template>
+              </ngb-carousel>
+
+</div>

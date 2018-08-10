@@ -3,7 +3,10 @@
     <section class="inmuebles-wrapper" style="max-width: 100%;">
         <h1 style="text-align: center; margin-bottom: 2rem; font-size: 50px;">Inmuebles</h1>
         <div  class="inmuebles-cards">
-                <inmueble-card-component link="{{inmueble.id}}" title="{{inmueble.title}}" img="{{inmueble.images[0]}}" state="" place="{{inmueble.place}}"  price="{{inmueble.price}}"  *ngFor="let inmueble of publicaciones | async"> 
+                <inmueble-card-component link="{{inmueble.id}}" title="{{inmueble.title}}"  state="" place="{{inmueble.place}}"  price="{{inmueble.price}}"  *ngFor="let inmueble of publicaciones | async"> 
+                    
+                    
+                    <img [src]="img" alt="" srcset="" *ngFor="let img of inmueble.images ">
                 </inmueble-card-component>
         </div>
                     

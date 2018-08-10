@@ -4,7 +4,9 @@ import { InmueblesCardComponent } from '../card-inmueble/inmueble-card.component
 import { InmueblesService }from '../services/inmuebles.service';
 import { Observable } from 'rxjs';
 import { IInmueble } from '../models/inmueble';
-import {} from '../inmuebles/inmuebles.component';
+import { InmueblesComponent } from '../inmuebles/inmuebles.component';
+import { SliderImgComponent } from '../slider-img/slider-img.component';
+
 
 @Component({
   selector: 'app-home',
