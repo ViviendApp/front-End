@@ -17,7 +17,7 @@ export class InmueblesService {
     /**
      * Inmuebles del usuario si ha iniciado sesion
      */
-    public inmueblesDeUsuario : AngularFirestoreCollection<IInmueble>;
+    public inmueblesDeUsuario : Promise<IInmueble[]>;
     /**
      * Total de inmuebles en el CloudFirestore
      */
@@ -53,6 +53,8 @@ export class InmueblesService {
                 return {...data,id};
             });
         })
+
+        this.setInmueblesUsuario();
 
         //Actualiza la lista de posts con el realtime database
         // this.posts=this.inmueblesRTD.snapshotChanges().map(actions=>{
@@ -109,7 +111,25 @@ export class InmueblesService {
       * Actualiza los inmuebles del usuario que tiene sesion iniciada para que pueda editarlos
       */
      setInmueblesUsuario(){
+         
+         this.auth.getUser().subscribe((usr)=>{ 
+            
+             this.inmueblesDeUsuario=
+             this.inmueblesCF.ref.where("userID","==",usr.uid).get().then((value)=>{
+                return value.docs
+                .map(actions=>{
+                        return actions.data() as IInmueble ;
+                    });
 
+
+
+                 for (let index = 0; index < value.docs.length; index++) {
+                     const element = value.docs[index];
+                     console.log(element.data());
+                 }
+               });
+             ;
+         });
      }
 
      

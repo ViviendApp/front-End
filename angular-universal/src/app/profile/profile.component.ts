@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
-import { AngularFireAuth } from 'angularfire2/auth';
+import { InmueblesService } from '../services/inmuebles.service';
+import { IInmueble } from '../models/inmueble';
 
 @Component({
     selector: 'profile-component',
@@ -10,10 +11,14 @@ import { AngularFireAuth } from 'angularfire2/auth';
   })
   export class ProfileComponent implements OnInit{
     public user:any;
-    constructor(private auth:AuthService, public router : Router){
+
+    public inmuebles:Promise<IInmueble[]>;
+    constructor(private auth:AuthService, public router : Router, private inmueblesS : InmueblesService){
       this.user= auth.getUserObject;
     }
 
-    ngOnInit(){  }
+    ngOnInit(){ 
+      this.inmuebles=this.inmueblesS.inmueblesDeUsuario;
+     }
     
   }

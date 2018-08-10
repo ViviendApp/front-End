@@ -34,7 +34,7 @@ import { DropZoneDirective } from './directives/drop-zone.directive';
 import { InmueblesCardComponent } from './card-inmueble/inmueble-card.component'
 import { ProfileComponent } from './profile/profile.component';
 import { FooterComponent } from './footer/footer.component';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 
 
 @NgModule({
@@ -53,7 +53,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     DropZoneDirective,
     InmueblesCardComponent,
     ProfileComponent,
-    FooterComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'my-app'}),
@@ -65,7 +65,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
     AngularFireDatabaseModule,
     AngularFireStorageModule,
-    NgbModule.forRoot()
+    
 
   ],
   providers: [AuthService,UsersService, AuthGuard, InmueblesService,AlertService,MustLogOut,AngularFireStorage,DropZoneDirective],
