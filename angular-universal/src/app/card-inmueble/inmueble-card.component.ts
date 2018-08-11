@@ -14,6 +14,7 @@ import { SliderImgComponent } from '../slider-img/slider-img.component';
         @Input() link:string;
         @Input() price:string;
         @Input() place:string;
+        @Input() img:any;
         @Input() state:string;
         @Input() desc:string;
 
@@ -23,5 +24,13 @@ import { SliderImgComponent } from '../slider-img/slider-img.component';
         constructor(){
 
         }
+        getCssImg(){
+          if(this.img==null)
+            this.img=  'https://i.ytimg.com/vi/_cgLtcsM8Dk/maxresdefault.jpg';
+          if(this.img=='')
+            this.img=  'https://i.ytimg.com/vi/_cgLtcsM8Dk/maxresdefault.jpg';
+            
 
+          return {'background':'url('+this.img+')'};
+        }
   }

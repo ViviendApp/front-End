@@ -1,10 +1,7 @@
 <a routerLink="/inmuebles/{{link}}">
     <div class="caja"> 
-            <div class="principal">
-                <slider-img-component>
-                        <ng-content select="img">
-                        </ng-content>
-                </slider-img-component>
+            <div class="principal" [ngStyle]="getCssImg()">
+                
             </div>
             <div class="desc">
                     <h1>$ {{price}}</h1>
