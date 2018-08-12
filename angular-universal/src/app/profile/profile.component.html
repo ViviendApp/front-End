@@ -5,10 +5,12 @@
     <div class="content">
         <h2>{{this.auth.getUserObject().name}}</h2>
     </div>
-    <inmueble-card-component link="{{inmueble.id}}" title="{{inmueble.title}}"  state="" place="{{inmueble.place}}"  price="{{inmueble.price}}"  *ngFor="let inmueble of inmuebles | async"> 
-                    
-                    
-        <img [src]="img" alt="" srcset="" *ngFor="let img of inmueble.images ">
+
+    <section class="inmuebles-wrapper" style="max-width: 100%;">
+    <div  class="inmuebles-cards">
+    <inmueble-card-component link="{{inmueble.id}}" title="{{inmueble.title}}" img="{{inmueble.images[0]}}" state="" place="{{inmueble.place}}"  price="{{inmueble.price}}"  *ngFor="let inmueble of inmuebles | async"> 
     </inmueble-card-component>
+    </div>
+</section>
     
 </section>

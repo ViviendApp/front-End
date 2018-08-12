@@ -7,3 +7,18 @@
     height: 8vh;
     
 }
+:host{
+    width: 100%;
+}
+.inmuebles-wrapper{
+    margin: 5vh 10vw;
+    padding: 2vw 3vw;
+    max-width: 100%;
+}
+.inmuebles-cards{
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    color: rgb(0, 0, 0);
+}

@@ -118,7 +118,14 @@ export class InmueblesService {
              this.inmueblesCF.ref.where("userID","==",usr.uid).get().then((value)=>{
                 return value.docs
                 .map(actions=>{
-                        return actions.data() as IInmueble ;
+
+                    const data=actions.data() as IInmueble;
+                    const id =actions.id;
+                
+                    //Une al data y al id
+                    return {...data,id};
+
+                       
                     });
 
 
