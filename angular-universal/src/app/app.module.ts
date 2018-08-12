@@ -34,6 +34,7 @@ import { DropZoneDirective } from './directives/drop-zone.directive';
 import { InmueblesCardComponent } from './card-inmueble/inmueble-card.component'
 import { ProfileComponent } from './profile/profile.component';
 import { FooterComponent } from './footer/footer.component';
+import { InformacionUsuarioComponent } from './informacion-usuario/informacion-usuario.component';
 
 
 
@@ -53,7 +54,8 @@ import { FooterComponent } from './footer/footer.component';
     DropZoneDirective,
     InmueblesCardComponent,
     ProfileComponent,
-    FooterComponent
+    FooterComponent,
+    InformacionUsuarioComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'my-app'}),

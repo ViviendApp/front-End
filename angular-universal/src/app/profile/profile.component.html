@@ -3,14 +3,15 @@
         <h1>Mi Perfil</h1>
     </div>
     <div class="content">
-        <h2>{{this.auth.getUserObject().name}}</h2>
+        <app-informacion-usuario name="{{this.auth.getUserObject().name}}" email="{{this.auth.getUserObject().email}}"></app-informacion-usuario>
+        <br>
+        POSTS:
+        <section class="inmuebles-wrapper" style="max-width: 100%;">
+            <div  class="inmuebles-cards">
+                <inmueble-card-component link="{{inmueble.id}}" title="{{inmueble.title}}" img="{{inmueble.images[0]}}" state="" place="{{inmueble.place}}"  price="{{inmueble.price}}"  *ngFor="let inmueble of inmuebles | async"> 
+                </inmueble-card-component>
+            </div>
+        </section>
     </div>
-
-    <section class="inmuebles-wrapper" style="max-width: 100%;">
-    <div  class="inmuebles-cards">
-    <inmueble-card-component link="{{inmueble.id}}" title="{{inmueble.title}}" img="{{inmueble.images[0]}}" state="" place="{{inmueble.place}}"  price="{{inmueble.price}}"  *ngFor="let inmueble of inmuebles | async"> 
-    </inmueble-card-component>
-    </div>
-</section>
     
 </section>

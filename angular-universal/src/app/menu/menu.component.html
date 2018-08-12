@@ -19,7 +19,7 @@
                         <a class="nav-login drop" >
                               <i class="fas fa-user-circle " tabindex="0" ></i> 
                               <ul>
-                                    <li class="name">{{this.auth.getUserObject().name}}</li>
+                                    <li  ><a class="name" routerLink="/profile" >{{this.auth.getUserObject().name}}</a></li>
                                     <li><a routerLink="" class="nav-logout" (click)="logout()">Cerrar Sesion</a></li>
                               </ul>
                         </a> 
