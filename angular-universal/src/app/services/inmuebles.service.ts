@@ -130,10 +130,7 @@ export class InmueblesService {
 
 
 
-                 for (let index = 0; index < value.docs.length; index++) {
-                     const element = value.docs[index];
-                     console.log(element.data());
-                 }
+                 
                });
              ;
          });
