@@ -37,6 +37,8 @@ import { FooterComponent } from './footer/footer.component';
 import { InformacionUsuarioComponent } from './informacion-usuario/informacion-usuario.component';
 import { SliderImgComponent } from './slider-img/slider-img.component';
 import { PrivacyComponent } from './about/privacy.component';
+import { SlideshowModule } from 'ng-simple-slideshow';
+
 
 
 
@@ -59,7 +61,9 @@ import { PrivacyComponent } from './about/privacy.component';
     FooterComponent,
     InformacionUsuarioComponent,
     SliderImgComponent,
-    PrivacyComponent
+    PrivacyComponent,
+    
+
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'my-app'}),
@@ -71,6 +75,7 @@ import { PrivacyComponent } from './about/privacy.component';
     FormsModule,
     AngularFireDatabaseModule,
     AngularFireStorageModule,
+    SlideshowModule,
     
 
   ],
