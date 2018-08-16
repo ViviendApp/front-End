@@ -134,6 +134,11 @@ export class InmueblesService {
 
                     
 
+<<<<<<< HEAD
+=======
+
+                 
+>>>>>>> ed97fddeedaa92a72e5b0ace9b9650a96de01ce4
                });
              ;
          });
