@@ -125,21 +125,14 @@ export class InmueblesService {
                     for (let index = 0; index < value.docs.length; index++) {
                         const element = value.docs[index];
                         console.log(element.data());
+                        
                     }
                     //Une al data y al id
                     return {...data,id};
 
                        
                     });
-
-                    
-
-<<<<<<< HEAD
-=======
-
-                 
->>>>>>> ed97fddeedaa92a72e5b0ace9b9650a96de01ce4
-               });
+                });
              ;
          });
      }
