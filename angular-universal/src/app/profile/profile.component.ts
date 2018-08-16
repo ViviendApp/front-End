@@ -13,7 +13,7 @@ import { IInmueble } from '../models/inmueble';
     public user:any;
 
     public inmuebles:Promise<IInmueble[]>;
-    constructor(private auth:AuthService, public router : Router, private inmueblesS : InmueblesService){
+    constructor(public auth:AuthService, public router : Router, private inmueblesS : InmueblesService){
       this.user= auth.getUserObject;
     }
 

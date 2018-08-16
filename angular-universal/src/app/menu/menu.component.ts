@@ -11,7 +11,7 @@ import { IUser } from '../models/users';
   })
   export class MenuComponent {
 
-    constructor( private router : Router, private auth : AuthService){    }
+    constructor( private router : Router, public auth : AuthService){    }
 
     logout(){
         console.log('cerrando sesion');

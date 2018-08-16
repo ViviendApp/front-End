@@ -35,6 +35,8 @@ import { InmueblesCardComponent } from './card-inmueble/inmueble-card.component'
 import { ProfileComponent } from './profile/profile.component';
 import { FooterComponent } from './footer/footer.component';
 import { InformacionUsuarioComponent } from './informacion-usuario/informacion-usuario.component';
+import { SliderImgComponent } from './slider-img/slider-img.component';
+import { PrivacyComponent } from './about/privacy.component';
 
 
 
@@ -55,7 +57,9 @@ import { InformacionUsuarioComponent } from './informacion-usuario/informacion-u
     InmueblesCardComponent,
     ProfileComponent,
     FooterComponent,
-    InformacionUsuarioComponent
+    InformacionUsuarioComponent,
+    SliderImgComponent,
+    PrivacyComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'my-app'}),
