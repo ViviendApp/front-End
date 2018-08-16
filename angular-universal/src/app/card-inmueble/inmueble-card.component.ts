@@ -26,11 +26,16 @@ import { SliderImgComponent } from '../slider-img/slider-img.component';
         }
         getCssImg(){
           if(this.img==null)
-            this.img=  'https://i.ytimg.com/vi/_cgLtcsM8Dk/maxresdefault.jpg';
+            this.img=  "../../assets/img/no_foto/nofoto.jpg";
           if(this.img=='')
-            this.img=  'https://i.ytimg.com/vi/_cgLtcsM8Dk/maxresdefault.jpg';
+            this.img=  "../../assets/img/no_foto/nofoto.jpg";
             
 
-          return {'background':'url('+this.img+')'};
+          return {'background':'url('+this.img+')',
+          'background-size': 'cover',
+          'background-repeat': 'no-repeat',
+          'background-position': 'center center'
+        
+        };
         }
   }
