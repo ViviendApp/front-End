@@ -21,6 +21,7 @@ export class AuthService {
 
   public usuarioActual : IUser = null;
   
+  
   constructor(private afAuth : AngularFireAuth,  private afs: AngularFirestore) { 
     this.users = afs .collection<IUser>('users');
     this.usuarios=this.users.snapshotChanges().map(actions=>{
@@ -44,11 +45,47 @@ export class AuthService {
    * Da el usuario que tiene sesion iniciada
    */
   getUser():Observable<IUser>{
+
+    // if(this.afAuth.auth.currentUser.uid!=null)
+    // return this.users.doc(this.afAuth.auth.currentUser.uid).snapshotChanges()
+    // .take(1)
+    // .filter(user=>!!user)
+    // .map(
+    //   (val)=>{
+    //     const data=val.payload.data() as IUser;
+    //     const uid = val.payload.id;
+    //     console.log({...data,uid})
+    //     return {...data,uid}
+    //   }
+    // );
+    // console.log(88)
+
+
+    var id=this.afAuth.auth.currentUser.uid;
+    console.log(id);
+    return this.users.doc(id).snapshotChanges().map(
+      (val)=>{
+        const data=val.payload.data() as IUser;
+        const uid = val.payload.id;
+        console.log({...data,uid})
+        return {...data,uid}
+      });
+    
     return this.afAuth.authState
     .take(1)
     .filter(user=>!!user)
     .map((user:firebase.User)=>{
-      return (user) as IUser;
+      var hola=user as IUser;
+      this.users.doc(user.uid).snapshotChanges()
+      .map(
+      (val)=>{
+        const data=val.payload.data() as IUser;
+        const uid = val.payload.id;
+        console.log({...data,uid})
+        hola={...data,uid};
+        return {...data,uid}
+      });
+      return (hola) as IUser;
     });
    }
 
@@ -68,8 +105,7 @@ export class AuthService {
           const data= val.data() as IUser;
           this.usuarioActual={...data,uid};
         }
-        console.log(this.usuarioActual);
-  
+        
       })
     }).catch(console.log);
 
@@ -97,6 +133,12 @@ export class AuthService {
      */
     add(user: IUser):Promise<void>{
         return this.users.doc(user.uid).set(user).catch(console.log);
+    }
+
+    idUser():string{
+      console.log(789)
+      return this.afAuth.auth.currentUser.uid;
+      
     }
 
 }

@@ -13,14 +13,17 @@ import { IInmueble } from '../models/inmueble';
     public user:any;
 
     public inmuebles:Promise<IInmueble[]>;
-    constructor(public auth:AuthService, public router : Router, private inmueblesS : InmueblesService){
-      this.user= auth.getUserObject;
-    }
+    constructor(public auth:AuthService, public router : Router, private inmueblesS : InmueblesService){ 
+
+     }
 
     ngOnInit(){ 
       
-      this.inmuebles=this.inmueblesS.inmueblesDeUsuario; 
-      console.log(this.inmuebles)
+      
+      this.auth.getUser();
+      this.inmuebles=this.inmueblesS.setInmueblesUsuario();
+      // console.log(this.auth.idUser());
+      //this.auth.getUser().subscribe((k)=>{console.log(k.isStudent)});
      }
     
   }

@@ -54,8 +54,7 @@ export class InmueblesService {
             });
         })
 
-        this.setInmueblesUsuario();
-
+        
         //Actualiza la lista de posts con el realtime database
         // this.posts=this.inmueblesRTD.snapshotChanges().map(actions=>{
         //     return actions.map(item=>{
@@ -110,12 +109,12 @@ export class InmueblesService {
      /**
       * Actualiza los inmuebles del usuario que tiene sesion iniciada para que pueda editarlos
       */
-     setInmueblesUsuario(){
+     setInmueblesUsuario():Promise<IInmueble[]>{
          
-         this.auth.getUser().subscribe((usr)=>{ 
+          
             
-             this.inmueblesDeUsuario=
-             this.inmueblesCF.ref.where("userID","==",usr.uid).get().then((value)=>{
+           return  this.inmueblesDeUsuario=
+             this.inmueblesCF.ref.where("userID","==",this.auth.idUser()).get().then((value)=>{
                 return value.docs
                 .map(actions=>{
 
@@ -129,7 +128,7 @@ export class InmueblesService {
                     });
                 });
              ;
-         });
+         
      }
 
      
