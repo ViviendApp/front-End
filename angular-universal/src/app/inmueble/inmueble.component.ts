@@ -2,6 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { IInmueble } from '../models/inmueble';
 import { ActivatedRoute, Router } from '@angular/router';
 import { InmueblesService } from '../services/inmuebles.service';
+import { ThrowStmt } from '@angular/compiler';
+import { AuthService } from '../services/auth.service';
+import { auth } from 'firebase';
+import { Observable } from 'rxjs';
+import { IUser } from '../models/users';
+import { AlertService } from '../services/alert.service';
 
 /**
  * Se visualiza el inmueble segun el id
@@ -19,9 +25,10 @@ export class InmuebleComponent implements OnInit {
    * Indica si se puede visualizar la informacion de contacto
    */
   public verContacto : boolean;
+  
 
 
-  constructor(private router: Router,private route : ActivatedRoute, private inmueblesS : InmueblesService) { }
+  constructor(private router: Router,private route : ActivatedRoute, private inmueblesS : InmueblesService, private authS:AuthService, private alertService:AlertService) { }
 
   ngOnInit() {
     //Obtiene el id de la ruta
@@ -56,8 +63,20 @@ export class InmuebleComponent implements OnInit {
     });
   }
   solicitarInformacionContacto(){
-    this.verContacto=true;
-  }
+    
+    this.authS.getUser().subscribe((u)=>{
+      if(u.isStudent)
+      this.verContacto=true;
+      else
+      this.error('Contenido exclusivo para estudiantes');
+     
+    })
+    
+    }
+  
+    error(message: string) {
+      this.alertService.error(message);
+    }
 
 
     

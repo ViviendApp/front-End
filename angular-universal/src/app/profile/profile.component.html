@@ -3,6 +3,7 @@
         <h1>Mi Perfil</h1>
     </div>
     <div class="content">
+        <div *ngIf="(usuario | async)?.isStudent">Soy estudiante</div>
         <app-informacion-usuario name="{{(usuario | async)?.name}}" email="{{(usuario | async)?.email}}"></app-informacion-usuario>
         <br>
         POSTS:
