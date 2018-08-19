@@ -59,9 +59,9 @@ export class AuthService {
     //   }
     // );
     // console.log(88)
-
-
-    var id=this.afAuth.auth.currentUser.uid;
+    var id=' ';
+    if(this.afAuth.auth.currentUser!=null)
+    id=this.afAuth.auth.currentUser.uid;
     console.log(id);
     return this.users.doc(id).snapshotChanges().map(
       (val)=>{
@@ -71,22 +71,22 @@ export class AuthService {
         return {...data,uid}
       });
     
-    return this.afAuth.authState
-    .take(1)
-    .filter(user=>!!user)
-    .map((user:firebase.User)=>{
-      var hola=user as IUser;
-      this.users.doc(user.uid).snapshotChanges()
-      .map(
-      (val)=>{
-        const data=val.payload.data() as IUser;
-        const uid = val.payload.id;
-        console.log({...data,uid})
-        hola={...data,uid};
-        return {...data,uid}
-      });
-      return (hola) as IUser;
-    });
+    // return this.afAuth.authState
+    // .take(1)
+    // .filter(user=>!!user)
+    // .map((user:firebase.User)=>{
+    //   var hola=user as IUser;
+    //   this.users.doc(user.uid).snapshotChanges()
+    //   .map(
+    //   (val)=>{
+    //     const data=val.payload.data() as IUser;
+    //     const uid = val.payload.id;
+    //     console.log({...data,uid})
+    //     hola={...data,uid};
+    //     return {...data,uid}
+    //   });
+    //   return (hola) as IUser;
+    // });
    }
 
    /**

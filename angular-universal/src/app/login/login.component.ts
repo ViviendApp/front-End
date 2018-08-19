@@ -25,7 +25,10 @@ export class LoginComponent implements OnInit {
       .then(
         ()=> {
           //this.usersS.add(this.auth.getUserObject());
-          this.router.navigate(["/"])
+          this.auth.getUser();
+          console.log(8)
+          console.log(this.auth.getUser())
+          this.router.navigate(["/profile"])
         }
       );
 
