@@ -15,7 +15,6 @@ import { AngularFireAuthModule } from "angularfire2/auth";
 import { routes } from "./routes";
 import { LoginComponent } from './login/login.component';
 import { AuthService } from './services/auth.service';
-import { UsersService } from './services/users.service';
 import { AuthGuard } from './guards/auth.guard.service';
 import { InmuebleComponent } from './inmueble/inmueble.component';
 import { FormsModule } from "@angular/forms";
@@ -79,7 +78,7 @@ import { SlideshowModule } from 'ng-simple-slideshow';
     
 
   ],
-  providers: [AuthService,UsersService, AuthGuard, InmueblesService,AlertService,MustLogOut,AngularFireStorage,DropZoneDirective],
+  providers: [AuthService, AuthGuard, InmueblesService,AlertService,MustLogOut,AngularFireStorage,DropZoneDirective],
   bootstrap: [AppComponent],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

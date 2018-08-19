@@ -122,11 +122,6 @@ export class InmueblesService {
                     const data=actions.data() as IInmueble;
                     const id =actions.id;
                     
-                    for (let index = 0; index < value.docs.length; index++) {
-                        const element = value.docs[index];
-                        console.log(element.data());
-                        
-                    }
                     //Une al data y al id
                     return {...data,id};
 

@@ -18,8 +18,9 @@ import { IInmueble } from '../models/inmueble';
     }
 
     ngOnInit(){ 
-      this.inmuebles=this.inmueblesS.inmueblesDeUsuario; 
       
+      this.inmuebles=this.inmueblesS.inmueblesDeUsuario; 
+      console.log(this.inmuebles)
      }
     
   }
