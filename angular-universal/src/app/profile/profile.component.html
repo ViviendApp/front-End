@@ -3,7 +3,7 @@
         <h1>Mi Perfil</h1>
     </div>
     <div class="content">
-        <app-informacion-usuario name="{{this.auth.getUserObject().name}}" email="{{this.auth.getUserObject().email}}"></app-informacion-usuario>
+        <app-informacion-usuario name="{{(usuario | async)?.name}}" email="{{(usuario | async)?.email}}"></app-informacion-usuario>
         <br>
         POSTS:
         <section class="inmuebles-wrapper" style="max-width: 100%;">
