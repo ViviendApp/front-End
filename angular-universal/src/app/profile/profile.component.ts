@@ -18,12 +18,7 @@ import { IInmueble } from '../models/inmueble';
      }
 
     ngOnInit(){ 
-      
-      
-      this.auth.getUser();
       this.inmuebles=this.inmueblesS.setInmueblesUsuario();
-      // console.log(this.auth.idUser());
-      //this.auth.getUser().subscribe((k)=>{console.log(k.isStudent)});
-     }
+      }
     
   }
