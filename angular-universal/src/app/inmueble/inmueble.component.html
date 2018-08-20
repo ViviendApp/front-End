@@ -15,17 +15,17 @@
                 <ul>
                     <li >Direccion:
                         <span *ngIf="!editando"> popop{{(inmueble|async)?.place}}</span>
-                        <input type="text" *ngIf="editando" [(ngModel)]="inmuebleObjeto.place"> 
+                        <input type="text" *ngIf="editando" [(ngModel)]="inmuebleEditado.place"> 
                     </li>
                     <li>Precio: $
                         <span *ngIf="!editando"> {{(inmueble|async)?.price}}</span>
-                        <input type="text" *ngIf="editando" [(ngModel)]="inmuebleObjeto.price">   
+                        <input type="text" *ngIf="editando" [(ngModel)]="inmuebleEditado.price">   
                     </li>
                 </ul>
                 <button *ngIf="(!verContacto)"  (click)="solicitarInformacionContacto()">Solicitar informacion de contacto</button>
                 <span *ngIf="(verContacto)">Informacion de contacto <i class="fas fa-angle-double-down"></i></span>
                 <ul *ngIf="(verContacto)">
-                    <li>Correo: {{(inmueble|async)?.email}}</li>
+                    <li>Correo:  {{(inmueble|async)?.email}}</li>
                     <li>Telefono: {{(inmueble|async)?.phone}}</li>
                 </ul>
         </div>
