@@ -3,6 +3,8 @@ import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 import { InmueblesService } from '../services/inmuebles.service';
 import { IInmueble } from '../models/inmueble';
+import { Observable } from 'rxjs';
+import { IUser } from '../models/users';
 
 @Component({
     selector: 'profile-component',
@@ -13,13 +15,15 @@ import { IInmueble } from '../models/inmueble';
     public user:any;
 
     public inmuebles:Promise<IInmueble[]>;
-    constructor(public auth:AuthService, public router : Router, private inmueblesS : InmueblesService){
-      this.user= auth.getUserObject;
-    }
+    public usuario: Observable<IUser>;
+    
+    constructor(public auth:AuthService, public router : Router, private inmueblesS : InmueblesService){ 
+
+     }
 
     ngOnInit(){ 
-      this.inmuebles=this.inmueblesS.inmueblesDeUsuario; 
-      
-     }
+      this.inmuebles=this.inmueblesS.setInmueblesUsuario();
+      this.usuario=this.auth.getUser()
+      }
     
   }
