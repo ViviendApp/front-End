@@ -4,4 +4,5 @@ export interface IUser{
     email : string;
     bio?: string;
     isStudent?: boolean;
+    phone?: number;
 }

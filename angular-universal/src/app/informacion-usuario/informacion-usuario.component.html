@@ -1,4 +1,17 @@
-Informacion
-{{this.name}}
-Correo: {{this.email}}
-Telefono:
+Mi informacion
+<button *ngIf="!editando" (click)="editar()">Editar</button>
+<button *ngIf="editando" (click)="cancelarEdicion()">Cancelar</button>
+<br>
+<span *ngIf="!editando">{{userObject.name}}</span>
+<input *ngIf="editando" type="text" [(ngModel)]="userEdit.name">
+<br>
+Correo: 
+<span *ngIf="!editando">{{userObject.email}}</span>
+<input *ngIf="editando" type="text" [(ngModel)]="userEdit.email">
+
+<br>
+Telefono: 
+<span *ngIf="!editando">{{userObject.phone}}</span>
+<input *ngIf="editando" type="text" [(ngModel)]="userEdit.phone">
+<br>
+<button *ngIf="editando" (click)="confirmarEdicion()">Confirmar cambios</button>
