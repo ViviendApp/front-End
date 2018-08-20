@@ -22,7 +22,8 @@ export class AuthService {
   public usuarioActual : IUser = null;
   
   
-  constructor(private afAuth : AngularFireAuth,  private afs: AngularFirestore) { 
+  constructor(private afAuth : AngularFireAuth,  private afs: AngularFirestore)
+   { 
     this.users = afs .collection<IUser>('users');
     this.usuarios=this.users.snapshotChanges().map(actions=>{
       return actions.map(item=>{
@@ -136,9 +137,11 @@ export class AuthService {
     }
 
     idUser():string{
-      console.log(789)
       return this.afAuth.auth.currentUser.uid;
       
     }
 
+    actualizarUsuario(usuario: IUser){
+      this.users.doc(usuario.uid).set(usuario).catch(console.log);
+    }
 }
