@@ -125,5 +125,16 @@ export class InmuebleComponent implements OnInit {
     
 
   }  
+  eliminar(){
+    this.confirmarEliminacion();
+  }
+  confirmarEliminacion(){
+    this.inmueblesS.deletePost(this.inmuebleObjeto).then(()=>
+    {
+      this.router.navigate(["/"])
+    }
+    );
+
+  }
 
 }

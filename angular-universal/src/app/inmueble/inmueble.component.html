@@ -4,7 +4,8 @@
                 <h1>{{inmuebleObjeto.title}}</h1>
                 <button *ngIf="(this.esDeUsuario | async)&&!editando" (click)="editar()">Editar</button> 
                 <button *ngIf="(this.esDeUsuario | async)&&editando" (click)="cancelarEdicion()">Cancelar</button> 
-           
+                <button *ngIf="(this.esDeUsuario | async)" (click)="eliminar()">Eliminar</button> 
+                
             </div>
             <div class="imagen">
                 <img src="{{img}}" alt="">

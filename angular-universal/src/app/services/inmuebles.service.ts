@@ -156,6 +156,17 @@ export class InmueblesService {
 
         return task;
     }
+
+
+    deletePost(inmueble : IInmueble) : Promise<void>{
+        //Eliminacion de las fotos
+        inmueble.images.forEach(img => {
+            this.storage.storage.refFromURL(img).delete().then(
+                (v)=>console.log(v))
+            
+        });
+        return this.inmueblesCF.doc(inmueble.postID).delete();
+    }
     
      
 }
