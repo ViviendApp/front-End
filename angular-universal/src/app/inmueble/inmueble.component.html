@@ -1,7 +1,7 @@
 <section class="contenedor">
         <div class="heading">
             <div class="barra">
-                <h1>{{(inmueble|async)?.title}}</h1>
+                <h1>{{inmuebleObjeto.title}}</h1>
                 <button *ngIf="(this.esDeUsuario | async)&&!editando" (click)="editar()">Editar</button> 
                 <button *ngIf="(this.esDeUsuario | async)&&editando" (click)="cancelarEdicion()">Cancelar</button> 
            
@@ -14,19 +14,21 @@
                 
                 <ul>
                     <li >Direccion:
-                        <span *ngIf="!editando"> popop{{(inmueble|async)?.place}}</span>
+                        <span *ngIf="!editando"> {{inmuebleObjeto.place}}</span>
                         <input type="text" *ngIf="editando" [(ngModel)]="inmuebleEditado.place"> 
                     </li>
                     <li>Precio: $
-                        <span *ngIf="!editando"> {{(inmueble|async)?.price}}</span>
+                        <span *ngIf="!editando"> {{inmuebleObjeto.price}}</span>
                         <input type="text" *ngIf="editando" [(ngModel)]="inmuebleEditado.price">   
                     </li>
                 </ul>
-                <button *ngIf="(!verContacto)"  (click)="solicitarInformacionContacto()">Solicitar informacion de contacto</button>
+                <button *ngIf="(editando)"  (click)="confirmarEdicion()">Confirmar cambios</button>
+                
+                <button *ngIf="(!verContacto&&!editando)"  (click)="solicitarInformacionContacto()">Solicitar informacion de contacto</button>
                 <span *ngIf="(verContacto)">Informacion de contacto <i class="fas fa-angle-double-down"></i></span>
                 <ul *ngIf="(verContacto)">
-                    <li>Correo:  {{(inmueble|async)?.email}}</li>
-                    <li>Telefono: {{(inmueble|async)?.phone}}</li>
+                    <li>Correo:  {{inmuebleObjeto.email}}</li>
+                    <li>Telefono: {{inmuebleObjeto.phone}}</li>
                 </ul>
         </div>
 </section>

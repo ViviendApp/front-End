@@ -72,6 +72,7 @@ export class InmueblesService {
       */
      addCF(inmueble : IInmueble) :Promise<void>{
          //ClOUD FIRESTORE:
+         console.log(inmueble);
          return this.inmueblesCF.doc(inmueble.postID).set(inmueble).catch(console.log);
      }
      /**

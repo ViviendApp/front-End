@@ -94,7 +94,6 @@ export class InmuebleComponent implements OnInit {
     this.inmuebleEditado={
       postID:this.inmuebleObjeto.postID,
       date:this.inmuebleObjeto.date,
-      desc:this.inmuebleObjeto.desc,
       email:this.inmuebleObjeto.email,
       images:this.inmuebleObjeto.images,
       phone:this.inmuebleObjeto.phone,
@@ -110,11 +109,19 @@ export class InmuebleComponent implements OnInit {
   } 
   cancelarEdicion(){
     this.editando=false;
-    console.log(this.editando);
     console.log(this.inmuebleObjeto)
     console.log(this.inmuebleEditado)
   } 
   confirmarEdicion(){
+    this.inmueblesS.addCF(this.inmuebleEditado).then(()=>{
+      this.inmuebleObjeto=this.inmuebleEditado;
+      this.editando=false;
+    }
+    ).catch(()=>{
+      this.error('No se pudieron efectuar los cambios');
+    }
+    );
+    
 
   }  
 
