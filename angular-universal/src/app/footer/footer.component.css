@@ -24,6 +24,13 @@ footer{
 }
 .column ul li{
     padding: 0 0 3px 0;
+    text-decoration: none;
+    display: block;
+    margin-top: 5px;
+}
+.column ul li a{
+    text-decoration: inherit;
+    color: inherit;
 }
 .column img{
     max-width: 22vw;
