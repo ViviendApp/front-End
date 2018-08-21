@@ -160,7 +160,9 @@ export class InmueblesService {
 
     deletePost(inmueble : IInmueble) : Promise<void>{
         //Eliminacion de las fotos
+        console.log(inmueble.images.length)
         inmueble.images.forEach(img => {
+            console.log(879)
             this.storage.storage.refFromURL(img).delete().then(
                 (v)=>console.log(v))
             

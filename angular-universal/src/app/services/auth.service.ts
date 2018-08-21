@@ -100,6 +100,7 @@ export class AuthService {
         if(!val.exists){
           this.add({name: this.afAuth.auth.currentUser.displayName, uid: this.afAuth.auth.currentUser.uid, email: this.afAuth.auth.currentUser.email, isStudent:false})
           this.usuarioActual={name: this.afAuth.auth.currentUser.displayName, uid: this.afAuth.auth.currentUser.uid, email: this.afAuth.auth.currentUser.email, isStudent:false};
+          this.getUser()
         }
         else{
           const uid = val.id;
@@ -144,4 +145,11 @@ export class AuthService {
     actualizarUsuario(usuario: IUser){
       this.users.doc(usuario.uid).set(usuario).catch(console.log);
     }
+
+    deleteProfile(id : string) : Promise<void>{
+      console.log("borando....")
+     return this.users.doc(id).delete();
+  }
+
+
 }

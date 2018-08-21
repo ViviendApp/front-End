@@ -8,7 +8,6 @@ import { auth } from 'firebase';
 import { Observable } from 'rxjs';
 import { IUser } from '../models/users';
 import { AlertService } from '../services/alert.service';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 /**
  * Se visualiza el inmueble segun el id

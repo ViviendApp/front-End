@@ -16,6 +16,7 @@ import { IUser } from '../models/users';
 
     public inmuebles:Promise<IInmueble[]>;
     public usuario: Observable<IUser>;
+    public userId: string;
     
     constructor(public auth:AuthService, public router : Router, private inmueblesS : InmueblesService){ 
 
@@ -24,6 +25,28 @@ import { IUser } from '../models/users';
     ngOnInit(){ 
       this.inmuebles=this.inmueblesS.setInmueblesUsuario();
       this.usuario=this.auth.getUser()
-      }
+
+      this.auth.getUser().subscribe((us)=>{
+        this.userId=us.uid;
+      })
+    }
+    eliminarPerfil(){
+        this.confirmarEliminarPerfil();
+    }
+    confirmarEliminarPerfil(){
+        //Elimina inmuebles
+        this.inmuebles.then((i)=>{
+          i.forEach(element => {
+           this.inmueblesS.deletePost(element).catch((v)=>{
+              console.log(v)
+           }) 
+          });
+        })
+        console.log('borrando perfil')
+        //Elimina perfil
+        this.auth.deleteProfile(this.userId).then(()=>{this.auth.logout().then(()=>{this.router.navigate(["/"])})}).catch(console.log);
+        
+
+    }
     
   }
