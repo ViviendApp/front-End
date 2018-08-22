@@ -32,6 +32,9 @@ export class InmuebleComponent implements OnInit {
 
   public inmueble : Observable<IInmueble>;
 
+  public phone : number;
+  public email : string;
+
   constructor(private router: Router,private route : ActivatedRoute, private inmueblesS : InmueblesService, private authS:AuthService, private alertService:AlertService) { }
 
   ngOnInit() {
@@ -43,6 +46,7 @@ export class InmuebleComponent implements OnInit {
     // Obtiene el imueble desde la firecloud
     this.obtenerInmuebleFD();
     this.inmueble=this.inmueblesS.obtenerInmueble(this.idInmueble);
+    
     
       
      
@@ -76,8 +80,13 @@ export class InmuebleComponent implements OnInit {
   solicitarInformacionContacto(){
     
     this.authS.getUser().subscribe((u)=>{
-      if(u.isStudent)
+      if(u.isStudent){
         this.verContacto=true;
+        this.authS.obtenerUsuario(this.inmuebleObjeto.userID).then((usr)=>{
+          this.email=usr.email;
+          this.phone=usr.phone;
+        })
+      }
       else
         this.error('Contenido exclusivo para estudiantes');
      

@@ -151,5 +151,12 @@ export class AuthService {
      return this.users.doc(id).delete();
   }
 
+  obtenerUsuario(id : string):Promise<IUser>{
+    return this.users.doc(id).ref.get().then((val)=>{
+      const uid = val.id;
+      const data= val.data() as IUser;
+      return{...data,uid};
+    })
+  }
 
 }
