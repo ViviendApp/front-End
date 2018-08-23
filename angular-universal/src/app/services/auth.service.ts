@@ -63,12 +63,12 @@ export class AuthService {
     var id=' ';
     if(this.afAuth.auth.currentUser!=null)
     id=this.afAuth.auth.currentUser.uid;
-    console.log(id);
+    
     return this.users.doc(id).snapshotChanges().map(
       (val)=>{
         const data=val.payload.data() as IUser;
         const uid = val.payload.id;
-        console.log({...data,uid})
+        
         return {...data,uid}
       });
     
@@ -147,7 +147,7 @@ export class AuthService {
     }
 
     deleteProfile(id : string) : Promise<void>{
-      console.log("borando....")
+      
      return this.users.doc(id).delete();
   }
 
