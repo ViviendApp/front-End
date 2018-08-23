@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MsAdalAngular6Service } from 'microsoft-adal-angular6';
+import { MsalService } from '@azure/msal-angular'
 import { AuthService } from '../services/auth.service'
 
 
@@ -13,28 +13,32 @@ import { AuthService } from '../services/auth.service'
 export class studentValidComponent implements OnInit{
   
 
-  constructor( private adalSvc: MsAdalAngular6Service,private authS : AuthService) {
+  constructor(private authS : AuthService, private msalSrv: MsalService) {
     
   }
 
   ngOnInit(){
+    
+    console.log(this.msalSrv.getUser().name)
       // Handle callback if this is a redirect from Azure
-    this.adalSvc.handleCallback()
-    console.log(this.adalSvc.userInfo)
-    // Check if the user is authenticated. If not, call the login() method
-    if(this.adalSvc.userInfo!=null){
-      //Logica para agregar valor como estudiante :p
-    }else{
+    //this.adalSvc.handleCallback()
+    // console.log(this.adalSvc.userInfo.profile.name)
+    // // Check if the user is authenticated. If not, call the login() method
+    // if(this.adalSvc.userInfo!=null){
+    //   //Logica para agregar valor como estudiante :p
       
-    }
+    // }else{
+      
+    // }
 
 
   }
   public login(){
-    this.adalSvc.login()
+   // this.adalSvc.login()
+   this.msalSrv.loginRedirect();
   }
   // Logout Method
   public logout() {
-    this.adalSvc.logout()
+   // this.adalSvc.logout()
   }
 }

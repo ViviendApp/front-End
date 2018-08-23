@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuComponent } from '../menu/menu.component';
 import { FooterComponent} from '../footer/footer.component';
-import { MsAdalAngular6Service } from 'microsoft-adal-angular6';
+
 
 
 
@@ -13,10 +13,10 @@ import { MsAdalAngular6Service } from 'microsoft-adal-angular6';
 })
 export class AppComponent {
 
-  constructor(private router : Router,private adalSvc: MsAdalAngular6Service ){
+  constructor(private router : Router ){
    
   }
   ngOnInit(){
-  this.adalSvc.handleCallback();
+    
   }
 }

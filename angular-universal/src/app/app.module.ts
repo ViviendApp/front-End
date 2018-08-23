@@ -38,7 +38,7 @@ import { SliderImgComponent } from './slider-img/slider-img.component';
 import { PrivacyComponent } from './about/privacy.component';
 import { SlideshowModule } from 'ng-simple-slideshow';
 import { studentValidComponent } from './studentValidationComponent/studentValid.component';
-import { MsAdalAngular6Module } from 'microsoft-adal-angular6';
+import { MsalModule } from '@azure/msal-angular';
 
 
 
@@ -77,10 +77,8 @@ import { MsAdalAngular6Module } from 'microsoft-adal-angular6';
     AngularFireDatabaseModule,
     AngularFireStorageModule,
     SlideshowModule,
-    MsAdalAngular6Module.forRoot({
-      tenant: 'uniandes.onmicrosoft.com',
-      clientId: '',
-      redirectUri: window.location.origin
+    MsalModule.forRoot({
+      clientID: '881f0006-33eb-4a72-b392-14f5cd0e1ef1'
     })
       
 

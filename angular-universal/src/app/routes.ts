@@ -19,7 +19,7 @@ export const routes = [
     { path: 'publicar', component: NuevoInmuebleComponent, pathMatch: 'full',canActivate:[AuthGuard]}, 
     { path: '404', component: ErrorNotFoundComponent, pathMatch: 'full'},
     { path: 'dropzone', component:DropZoneComponent, pathMatch:'full'},
-    { path: 'profile', component:ProfileComponent, pathMatch:'full' ,canActivate:[AuthGuard]},
+    { path: 'profile', component:ProfileComponent, pathMatch:'full', canActivate:[AuthGuard]},
     { path: 'about/privacy-policy', component:PrivacyComponent, pathMatch:'full'},
     { path: 'loginUniandes', component:studentValidComponent, pathMatch:'full'}
   ]
