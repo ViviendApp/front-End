@@ -9,6 +9,7 @@ import { MustLogOut } from "./guards/mustLogOut.guard.service";
 import { DropZoneComponent } from "./nuevo-inmueble/drop-zone/drop-zone.component";
 import { ProfileComponent } from "./profile/profile.component";
 import { PrivacyComponent }from "./about/privacy.component";
+import { studentValidComponent } from "./studentValidationComponent/studentValid.component";
 
 export const routes = [
     { path: '', component: HomeComponent, pathMatch: 'full'},
@@ -19,5 +20,6 @@ export const routes = [
     { path: '404', component: ErrorNotFoundComponent, pathMatch: 'full'},
     { path: 'dropzone', component:DropZoneComponent, pathMatch:'full'},
     { path: 'profile', component:ProfileComponent, pathMatch:'full' ,canActivate:[AuthGuard]},
-    { path: 'about/privacy-policy', component:PrivacyComponent, pathMatch:'full'}
+    { path: 'about/privacy-policy', component:PrivacyComponent, pathMatch:'full'},
+    { path: 'loginUniandes', component:studentValidComponent, pathMatch:'full'}
   ]

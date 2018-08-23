@@ -5,6 +5,7 @@ import { FooterComponent} from '../footer/footer.component';
 
 
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,10 +13,10 @@ import { FooterComponent} from '../footer/footer.component';
 })
 export class AppComponent {
 
-  constructor(private router : Router){
-
+  constructor(private router : Router, ){
+   // this.serviceUniandes.init(config);
   }
   ngOnInit(){
-    
+    //this.serviceUniandes.handleWindowCallback();
   }
 }
