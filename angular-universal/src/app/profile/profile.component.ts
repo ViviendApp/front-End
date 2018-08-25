@@ -24,9 +24,9 @@ import { IUser } from '../models/users';
 
     ngOnInit(){ 
       this.inmuebles=this.inmueblesS.setInmueblesUsuario();
-      this.usuario=this.auth.getUser()
+      this.usuario=this.auth.getUserObservable
 
-      this.auth.getUser().subscribe((us)=>{
+      this.auth.getUserObservable.subscribe((us)=>{
         this.userId=us.uid;
       })
     }

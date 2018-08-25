@@ -58,7 +58,7 @@ export class InmuebleComponent implements OnInit {
   obtenerInmuebleFD(){
     this.inmueblesS.obtenerInmueble(this.idInmueble).subscribe(inmu=>{
       this.inmuebleObjeto=inmu;
-      this.esDeUsuario=this.authS.getUser().map((u)=>{
+      this.esDeUsuario=this.authS.getUserObservable.map((u)=>{
         if(u.uid==this.inmuebleObjeto.userID) return true;
         else return false
       }) 
@@ -79,7 +79,7 @@ export class InmuebleComponent implements OnInit {
   }
   solicitarInformacionContacto(){
     
-    this.authS.getUser().subscribe((u)=>{
+    this.authS.getUserObservable.subscribe((u)=>{
       if(u.isStudent){
         this.verContacto=true;
         this.authS.obtenerUsuario(this.inmuebleObjeto.userID).then((usr)=>{

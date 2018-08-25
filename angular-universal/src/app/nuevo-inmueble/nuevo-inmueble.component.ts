@@ -22,7 +22,7 @@ export class NuevoInmuebleComponent implements OnInit, AfterViewInit {
   constructor(private authS: AuthService, private inmueblesS: InmueblesService, public router : Router,private alertService: AlertService) { }
 
   ngOnInit() {
-    this.authS.getUser();
+    this.authS.getUserObservable;
     
     this.inmueble = {images:[],postID:'',date:this.obtenerFecha(),email : this.authS.getUserObject().email, phone : 0, place : '', price : 0, sold : false, title : '', userID : this.authS.getUserObject().uid}
   }

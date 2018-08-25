@@ -22,8 +22,8 @@ export class InformacionUsuarioComponent implements OnInit {
 
   ngOnInit() {
     this.editando=false;
-    this.user=this.authS.getUser();
-    this.authS.getUser().subscribe((value)=>this.userObject=value)
+    this.user=this.authS.getUserObservable;
+    this.authS.getUserObservable.subscribe((value)=>this.userObject=value)
   }
   editar(){
     this.userEdit={

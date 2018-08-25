@@ -34,7 +34,7 @@ export class InmueblesService {
 
     constructor(public afs : AngularFirestore, private auth : AuthService,private dataBase :AngularFireDatabase, private storage: AngularFireStorage ){
         //Si se ha iniciado sesion, se obtiene el id del usuario
-        this.auth.getUser().subscribe(user=>{
+        this.auth.getUserObservable.subscribe(user=>{
             this.uid=user.uid;
         });
         //Obtiene la coleccion de la cloudFirestore

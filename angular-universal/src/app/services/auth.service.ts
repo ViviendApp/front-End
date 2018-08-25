@@ -72,57 +72,19 @@ export class AuthService {
    */
  
 
-  getUser():Observable<IUser>{
-
-    // if(this.afAuth.auth.currentUser.uid!=null)
-    // return this.users.doc(this.afAuth.auth.currentUser.uid).snapshotChanges()
-    // .take(1)
-    // .filter(user=>!!user)
-    // .map(
-    //   (val)=>{
-    //     const data=val.payload.data() as IUser;
-    //     const uid = val.payload.id;
-    //     console.log({...data,uid})
-    //     return {...data,uid}
-    //   }
-    // );
-    // console.log(88)
-    var id=' ';
-    if(this.afAuth.auth.currentUser!=null)
-    id=this.afAuth.auth.currentUser.uid;
+  // getUser():Observable<IUser>{
+  //   var id=' ';
+  //   if(this.afAuth.auth.currentUser!=null)
+  //   id=this.afAuth.auth.currentUser.uid;
     
-    return this.users.doc(id).snapshotChanges().map(
-      (val)=>{
-        const data=val.payload.data() as IUser;
-        const uid = val.payload.id;
+  //   return this.users.doc(id).snapshotChanges().map(
+  //     (val)=>{
+  //       const data=val.payload.data() as IUser;
+  //       const uid = val.payload.id;
         
-        return {...data,uid}
-      });
-    
-    // return this.afAuth.authState
-    // .take(1)
-    // .filter(user=>!!user)
-    // .map((user:firebase.User)=>{
-    //   var hola=user as IUser;
-    //   this.users.doc(user.uid).snapshotChanges()
-    //   .map(
-    //   (val)=>{
-    //     const data=val.payload.data() as IUser;
-    //     const uid = val.payload.id;
-    //     console.log({...data,uid})
-    //     hola={...data,uid};
-    //     return {...data,uid}
-    //   });
-    //   return (hola) as IUser;
-    // });
-   }
-//    getAuthSUser() :Promise<IUser> {
-//     return new Promise((resolve, reject) => {
-//         this.getUser().subscribe(user => {
-//             resolve(user);
-//         });
-//     });
-// }*/
+  //       return {...data,uid}
+  //     });
+  //  }
 
 
 
@@ -136,7 +98,7 @@ export class AuthService {
         if(!val.exists){
           this.add({name: this.afAuth.auth.currentUser.displayName, uid: this.afAuth.auth.currentUser.uid, email: this.afAuth.auth.currentUser.email, isStudent:false})
           this.usuarioActual={name: this.afAuth.auth.currentUser.displayName, uid: this.afAuth.auth.currentUser.uid, email: this.afAuth.auth.currentUser.email, isStudent:false};
-          this.getUser()
+          this.getUserObservable
         }
         else{
           const uid = val.id;
