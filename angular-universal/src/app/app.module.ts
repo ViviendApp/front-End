@@ -78,7 +78,8 @@ import { NguCarouselModule } from '@ngu/carousel';
     AngularFireStorageModule,
     SlideshowModule,
     MsalModule.forRoot({
-      clientID: '881f0006-33eb-4a72-b392-14f5cd0e1ef1'
+      clientID: '881f0006-33eb-4a72-b392-14f5cd0e1ef1',
+      authority: 'https://login.microsoftonline.com/uniandes.onmicrosoft.com'
     }),
     NguCarouselModule
 
