@@ -19,23 +19,19 @@ export class studentValidComponent implements OnInit{
 
   ngOnInit(){
     
-    console.log(this.msalSrv.getUser().name)
-      // Handle callback if this is a redirect from Azure
-    //this.adalSvc.handleCallback()
-    // console.log(this.adalSvc.userInfo.profile.name)
-    // // Check if the user is authenticated. If not, call the login() method
-    // if(this.adalSvc.userInfo!=null){
-    //   //Logica para agregar valor como estudiante :p
-      
-    // }else{
-      
-    // }
-
-
+      this.authS.getUserObservable.subscribe(user=>{
+        console.log("getUser() value has changed");
+        console.log(user.uid);
+        if(!user.isStudent && this.msalSrv.getUser()!=null){
+          this.authS.validarEstudiante(user.uid);
+        }
+      })
+    
   }
   public login(){
-   // this.adalSvc.login()
+   
    this.msalSrv.loginRedirect();
+
   }
   // Logout Method
   public logout() {

@@ -39,7 +39,7 @@ import { PrivacyComponent } from './about/privacy.component';
 import { SlideshowModule } from 'ng-simple-slideshow';
 import { studentValidComponent } from './studentValidationComponent/studentValid.component';
 import { MsalModule } from '@azure/msal-angular';
-
+import { NguCarouselModule } from '@ngu/carousel';
 
 
 @NgModule({
@@ -79,8 +79,8 @@ import { MsalModule } from '@azure/msal-angular';
     SlideshowModule,
     MsalModule.forRoot({
       clientID: '881f0006-33eb-4a72-b392-14f5cd0e1ef1'
-    })
-      
+    }),
+    NguCarouselModule
 
   ],
   providers: [AuthService, AuthGuard, InmueblesService,AlertService,MustLogOut,AngularFireStorage,DropZoneDirective],

@@ -7,8 +7,9 @@ import * as firebase from 'firebase';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/take';
 import 'rxjs/add/operator/filter';
-import { Observable } from 'rxjs';
+import { Observable, Observer } from 'rxjs';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
+import { timeout } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,31 @@ export class AuthService {
   public usuarios : Observable<IUser[]>;
 
   public usuarioActual : IUser = null;
-  
+
+  public getUserObservable = new Observable<IUser>((observer) => {
+    let id = '';
+    
+    this.afAuth.auth.onAuthStateChanged(user => {
+      if (user !== undefined){
+      if (user != null) {
+        id = user.uid;
+      }
+
+      const documentObservable = this.users.doc(id)
+        .snapshotChanges()
+        .map(val => {
+          const data = val.payload.data() as IUser;
+          const uid = val.payload.id;
+          
+          return { ...data, uid };
+        })
+        .subscribe(user => observer.next(user));
+    }});
+    
+    return {
+      unsubscribe () {}
+    };
+  });
   
   constructor(private afAuth : AngularFireAuth,  private afs: AngularFirestore)
    { 
@@ -45,6 +70,8 @@ export class AuthService {
   /**
    * Da el usuario que tiene sesion iniciada
    */
+ 
+
   getUser():Observable<IUser>{
 
     // if(this.afAuth.auth.currentUser.uid!=null)
@@ -89,6 +116,15 @@ export class AuthService {
     //   return (hola) as IUser;
     // });
    }
+//    getAuthSUser() :Promise<IUser> {
+//     return new Promise((resolve, reject) => {
+//         this.getUser().subscribe(user => {
+//             resolve(user);
+//         });
+//     });
+// }*/
+
+
 
    /**
     * Inicia sesion
@@ -158,5 +194,27 @@ export class AuthService {
       return{...data,uid};
     })
   }
+
+
+
+
+   validarEstudiante(user: string){
+    
+    console.log("Deberia validar ?")
+    console.log(user)
+
+
+    this.users.doc(user).update({
+      isStudent:true
+    })
+    .then(function() {
+      console.log("Document successfully updated!");
+      })
+    .catch(function(error) {
+      // The document probably doesn't exist.
+      console.error("Error updating document: ", error);
+      });
+  }
+  
 
 }

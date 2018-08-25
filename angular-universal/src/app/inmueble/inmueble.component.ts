@@ -18,7 +18,7 @@ import { AlertService } from '../services/alert.service';
   styleUrls: ['./inmueble.component.css']
 })
 export class InmuebleComponent implements OnInit {
-  public img: string ="../../assets/img/no_foto/nofoto.jpg";
+  public img: string[] =["../../assets/img/no_foto/nofoto.jpg"];
   public inmuebleObjeto : IInmueble;
   public inmuebleEditado : IInmueble;
   public idInmueble : string;
@@ -67,7 +67,7 @@ export class InmuebleComponent implements OnInit {
       if(this.inmuebleObjeto.images!=null)
       {
         if(this.inmuebleObjeto.images[0]!=null)
-          this.img=this.inmuebleObjeto.images[0];
+          this.img=this.inmuebleObjeto.images;
       }
     });
   }

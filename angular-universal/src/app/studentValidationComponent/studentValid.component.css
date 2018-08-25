@@ -24,10 +24,10 @@ button{
     transition: background 0.8s;
   }
   .ripple:hover {
-    background: #1FE5B2 radial-gradient(circle, transparent 1%, #1FE5B2 1%) center/15000%;
+    background: rgba(255,235,0,.7) radial-gradient(circle, transparent 1%,rgba(255,235,0,.7) 1%) center/15000%;
   }
   .ripple:active {
-    background-color: #22FFC5;
+    background-color: rgba(255,235,0,.7);
     background-size: 100%;
     transition: background 0s;
   }
