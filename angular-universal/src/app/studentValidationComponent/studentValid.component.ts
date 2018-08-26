@@ -19,13 +19,13 @@ export class studentValidComponent implements OnInit{
 
   ngOnInit(){
     
-      this.authS.getUserObservable.subscribe(user=>{
-        console.log("getUser() value has changed");
-        console.log(user.uid);
-        if(!user.isStudent && this.msalSrv.getUser()!=null){
-          this.authS.validarEstudiante(user.uid);
-        }
-      })
+      // this.authS.getUserObservable.subscribe(user=>{
+      //   console.log("getUser() value has changed");
+      //   console.log(user.uid);
+      //   if(!user.isStudent && this.msalSrv.getUser()!=null){
+      //     this.authS.validarEstudiante(user.uid);
+      //   }
+      // })
     
   }
   public login(){

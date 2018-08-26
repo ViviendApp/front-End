@@ -19,12 +19,17 @@ export class AppComponent {
    
   }
   ngOnInit(){
-    this.authS.getUserObservable.subscribe(user=>{
-      console.log("getUser() value has changed");
-      console.log(user.uid);
-      if(!user.isStudent && this.msalServ.getUser()!=null){
-        this.authS.validarEstudiante(user.uid);
-      }
-    })
+    try{
+      this.authS.getUserObservable.subscribe(user=>{
+        console.log("getUser() value has changed");
+        console.log(user.uid);
+        if(!user.isStudent && this.msalServ.getUser()!=null){
+          this.authS.validarEstudiante(user.uid);
+        }
+      })
+    }catch(e){
+      
+    }
+    
   }
 }
