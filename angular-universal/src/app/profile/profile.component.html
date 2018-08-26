@@ -4,6 +4,8 @@
     </div>
     <div class="content">
         <div *ngIf="(usuario | async)?.isStudent">Soy estudiante</div>
+        <button *ngIf="!((usuario | async)?.isStudent)" (click)="validarEstudiante()">Validar como estudiante</button><br>
+        
         <app-informacion-usuario name="{{(usuario | async)?.name}}" email="{{(usuario | async)?.email}}"></app-informacion-usuario>
         <br>
         POSTS:

@@ -40,6 +40,7 @@ import { SlideshowModule } from 'ng-simple-slideshow';
 import { studentValidComponent } from './studentValidationComponent/studentValid.component';
 import { MsalModule } from '@azure/msal-angular';
 import { NguCarouselModule } from '@ngu/carousel';
+import { MustNoStudentGuard } from './guards/mustNoStudent.guard.service';
 
 
 @NgModule({
@@ -84,7 +85,7 @@ import { NguCarouselModule } from '@ngu/carousel';
     NguCarouselModule
 
   ],
-  providers: [AuthService, AuthGuard, InmueblesService,AlertService,MustLogOut,AngularFireStorage,DropZoneDirective],
+  providers: [AuthService, AuthGuard, InmueblesService,AlertService,MustLogOut,AngularFireStorage,DropZoneDirective,MustNoStudentGuard],
   bootstrap: [AppComponent],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

@@ -48,5 +48,8 @@ import { IUser } from '../models/users';
         
 
     }
+    validarEstudiante(){
+      this.router.navigate(["/loginUniandes"]);
+    }
     
   }

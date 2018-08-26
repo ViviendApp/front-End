@@ -2,10 +2,22 @@
         <div class="heading">
             <div class="barra">
                 <h1>{{inmuebleObjeto.title}}</h1>
-                <button *ngIf="(this.esDeUsuario | async)&&!editando" (click)="editar()">Editar</button> 
-                <button *ngIf="(this.esDeUsuario | async)&&editando" (click)="cancelarEdicion()">Cancelar</button> 
-                <button *ngIf="(this.esDeUsuario | async)" (click)="eliminar()">Eliminar</button> 
-                
+                <div class="opciones">
+                    <a class="drop">
+                        <i class="fas fa-bars " tabindex="0" ></i> 
+                        <ul>
+                            <li><button *ngIf="(this.esDeUsuario | async)&&!editando" (click)="editar()">Editar</button> 
+                            </li>
+                            <li><button *ngIf="(this.esDeUsuario | async)&&editando" (click)="cancelarEdicion()">Cancelar</button> 
+                            </li>
+                            <li><button *ngIf="(this.esDeUsuario | async)" (click)="eliminar()">Eliminar</button> 
+                            </li>
+                        </ul>      
+                    </a>
+                    <button *ngIf="(this.esDeUsuario | async)&&!editando" (click)="editar()">Editar</button> 
+                    <button *ngIf="(this.esDeUsuario | async)&&editando" (click)="cancelarEdicion()">Cancelar</button> 
+                    <button *ngIf="(this.esDeUsuario | async)" (click)="eliminar()">Eliminar</button> 
+                </div>
             </div>
             <div class="imagen">
                 <img src="{{img[0]}}" alt="">
@@ -23,8 +35,9 @@
                         <input type="text" *ngIf="editando" [(ngModel)]="inmuebleEditado.price">   
                     </li>
                 </ul>
-                <button *ngIf="(editando)"  (click)="confirmarEdicion()">Confirmar cambios</button>
-                
+                <div class="boton" *ngIf="(editando)">
+                <button  class="ripple" (click)="confirmarEdicion()">Confirmar cambios</button>
+                </div>
                 <button *ngIf="(!verContacto&&!editando)"  (click)="solicitarInformacionContacto()">Solicitar informacion de contacto</button>
                 <span *ngIf="(verContacto)">Informacion de contacto <i class="fas fa-angle-double-down"></i></span>
                 <ul *ngIf="(verContacto)">

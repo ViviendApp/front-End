@@ -10,6 +10,7 @@ import { DropZoneComponent } from "./nuevo-inmueble/drop-zone/drop-zone.componen
 import { ProfileComponent } from "./profile/profile.component";
 import { PrivacyComponent }from "./about/privacy.component";
 import { studentValidComponent } from "./studentValidationComponent/studentValid.component";
+import { MustNoStudentGuard } from "./guards/mustNoStudent.guard.service";
 
 export const routes = [
     { path: '', component: HomeComponent, pathMatch: 'full'},
@@ -21,5 +22,5 @@ export const routes = [
     { path: 'dropzone', component:DropZoneComponent, pathMatch:'full'},
     { path: 'profile', component:ProfileComponent, pathMatch:'full', canActivate:[AuthGuard]},
     { path: 'about/privacy-policy', component:PrivacyComponent, pathMatch:'full'},
-    { path: 'loginUniandes', component:studentValidComponent, pathMatch:'full'}
+    { path: 'loginUniandes', component:studentValidComponent, pathMatch:'full',canActivate:[MustNoStudentGuard]}
   ]
