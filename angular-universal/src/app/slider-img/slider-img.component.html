@@ -1,3 +1,10 @@
-<div class="slider">
-       <!--> <slideshow [imageUrls]="imageUrlArray"></slideshow><!-->
-</div>
+<ngu-carousel
+        [inputs]="carouselOne">
+        
+          <ngu-item NguCarouselItem >
+            <img src="{{imgs}}" alt="">
+          </ngu-item>
+          
+          <button NguCarouselPrev class='leftRs'>&lt;</button>
+          <button NguCarouselNext class='rightRs'>&gt;</button>
+</ngu-carousel>

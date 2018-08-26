@@ -8,7 +8,7 @@ import { auth } from 'firebase';
 import { Observable } from 'rxjs';
 import { IUser } from '../models/users';
 import { AlertService } from '../services/alert.service';
-
+import { SliderImgComponent } from '../slider-img/slider-img.component'
 /**
  * Se visualiza el inmueble segun el id
  */
