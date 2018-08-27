@@ -22,5 +22,6 @@ export const routes = [
     { path: 'dropzone', component:DropZoneComponent, pathMatch:'full'},
     { path: 'profile', component:ProfileComponent, pathMatch:'full', canActivate:[AuthGuard]},
     { path: 'about/privacy-policy', component:PrivacyComponent, pathMatch:'full'},
-    { path: 'loginUniandes', component:studentValidComponent, pathMatch:'full',canActivate:[MustNoStudentGuard]}
+    { path: 'loginUniandes', component:studentValidComponent, pathMatch:'full',canActivate:[MustNoStudentGuard]},
+    {path: '**', redirectTo: '/404'}
   ]

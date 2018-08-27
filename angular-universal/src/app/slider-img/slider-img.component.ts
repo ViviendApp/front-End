@@ -1,5 +1,6 @@
 import {Component, OnInit, Input} from '@angular/core';
-import { NguCarousel } from '@ngu/carousel'
+import { NguCarousel, NguCarouselStore, NguCarouselService } from '@ngu/carousel'
+
 
 @Component({
     selector: 'slider-img-component',
@@ -16,7 +17,9 @@ export class SliderImgComponent implements OnInit{
 
     }
     ngOnInit(){
-            console.log(this.imgs)
+            
+        
+            setTimeout(()=>{console.log("Cambieee")},3000)
             this.carouselOne = {
                 grid: {xs: 1, sm: 1, md: 1, lg: 1, all: 0},
                 slide: 1,
@@ -27,8 +30,7 @@ export class SliderImgComponent implements OnInit{
                 load: 2,
                 touch: true,
                 custom: 'banner'
-              }
-        
-        
+            }
     }
+
 }
