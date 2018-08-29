@@ -1,0 +1,25 @@
+Mi informacion
+
+<div class="styled-input ">
+<input *ngIf="editando" type="text" [(ngModel)]="userEdit.name">
+<label>Nombre</label>
+<span></span>
+</div>
+
+
+<div class="styled-input ">
+<input *ngIf="editando" type="text" [(ngModel)]="userEdit.email">
+<label>Email</label>
+<span></span>
+</div>
+
+
+
+
+<div class="styled-input ">
+<input *ngIf="editando" type="text" [(ngModel)]="userEdit.phone">
+<label>Telefono</label>
+<span></span>
+</div>
+
+<button *ngIf="editando" (click)="confirmarEdicion()">Confirmar cambios</button>

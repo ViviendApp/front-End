@@ -33,7 +33,7 @@ import { DropZoneDirective } from './directives/drop-zone.directive';
 import { InmueblesCardComponent } from './card-inmueble/inmueble-card.component'
 import { ProfileComponent } from './profile/profile.component';
 import { FooterComponent } from './footer/footer.component';
-import { InformacionUsuarioComponent } from './informacion-usuario/informacion-usuario.component';
+import { InformacionUsuarioComponent } from './profile/informacion-usuario/informacion-usuario.component';
 import { SliderImgComponent } from './slider-img/slider-img.component';
 import { PrivacyComponent } from './about/privacy.component';
 import { SlideshowModule } from 'ng-simple-slideshow';
