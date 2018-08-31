@@ -16,8 +16,9 @@
     display: flex;
     justify-content: space-between;
     
+    
 }
-.heading .imagen img{
+.imagen img{
     max-width: 100%;
 }
 .main-info{
@@ -70,6 +71,7 @@ button.ripple{
     left: auto;
     top: 2em;
     background: #fff;
+    color:#22FFC5;
     transition: all 0.3s ease;
     -webkit-transform: scale(0);
             transform: scale(0);
@@ -78,6 +80,7 @@ button.ripple{
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 8px 0 rgba(0, 0, 0, 0.12);
   }
   .drop ul li {
+    font-size: 1.7em;
     display: block;
     width: 100%;
   }

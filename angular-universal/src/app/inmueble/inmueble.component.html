@@ -1,38 +1,36 @@
 <section class="contenedor">
         <div class="heading">
             <div class="barra">
-                <h1>{{inmuebleObjeto.title}}</h1>
+                <h1>{{inmuebleObjeto?.title}}</h1>
                 <div class="opciones">
                     <a class="drop">
-                        <i class="fas fa-bars " tabindex="0" ></i> 
-                        <ul>
-                            <li><button *ngIf="(this.esDeUsuario | async)&&!editando" (click)="editar()">Editar</button> 
+                        <i class="fas fa-bars " tabindex="0" *ngIf="(this.esDeUsuario | async)&&!editando"></i> 
+                        <ul *ngIf="(this.esDeUsuario | async)&&!editando">
+                        <li (click)="editar()">Editar
                             </li>
-                            <li><button *ngIf="(this.esDeUsuario | async)&&editando" (click)="cancelarEdicion()">Cancelar</button> 
+                            <li (click)="cancelarEdicion()"><button *ngIf="(this.esDeUsuario | async)&&editando" >Cancelar</button> 
                             </li>
-                            <li><button *ngIf="(this.esDeUsuario | async)" (click)="eliminar()">Eliminar</button> 
+                            <li (click)="eliminar()">Eliminar
                             </li>
                         </ul>      
                     </a>
-                    <button *ngIf="(this.esDeUsuario | async)&&!editando" (click)="editar()">Editar</button> 
                     <button *ngIf="(this.esDeUsuario | async)&&editando" (click)="cancelarEdicion()">Cancelar</button> 
-                    <button *ngIf="(this.esDeUsuario | async)" (click)="eliminar()">Eliminar</button> 
                 </div>
             </div>
-            <div class="imagen">
-                <slider-img-component imgs="{{img}}" style="color: #000"></slider-img-component>
-                
-            </div>
+        </div>
+        <div class="imagen">
+            <slider-img-component imgs="{{inmuebleObjeto?.images}}" id="{{(this.inmueble | async)?.id}}" style="color: #000"></slider-img-component>
+            
         </div>
         <div class="main-info">
                 
                 <ul>
                     <li >Direccion:
-                        <span *ngIf="!editando"> {{inmuebleObjeto.place}}</span>
+                        <span *ngIf="!editando"> {{inmuebleObjeto?.place}}</span>
                         <input type="text" *ngIf="editando" [(ngModel)]="inmuebleEditado.place"> 
                     </li>
                     <li>Precio: $
-                        <span *ngIf="!editando"> {{inmuebleObjeto.price}}</span>
+                        <span *ngIf="!editando"> {{inmuebleObjeto?.price}}</span>
                         <input type="text" *ngIf="editando" [(ngModel)]="inmuebleEditado.price">   
                     </li>
                 </ul>

@@ -1,8 +1,8 @@
 <ngu-carousel
         [inputs]="carouselOne">
         
-          <ngu-item NguCarouselItem >
-            <img src="{{imgs}}" alt="">
+          <ngu-item NguCarouselItem *ngFor="let img of imagenes ">
+            <img src="{{img}}" alt="">
           </ngu-item>
           
           <button NguCarouselPrev class='leftRs'>&lt;</button>

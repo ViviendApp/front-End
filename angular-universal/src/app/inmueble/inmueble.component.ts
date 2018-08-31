@@ -47,7 +47,9 @@ export class InmuebleComponent implements OnInit {
     this.obtenerInmuebleFD();
     this.inmueble=this.inmueblesS.obtenerInmueble(this.idInmueble);
     
-    
+    setTimeout(()=>{
+      console.log('pop')
+      console.log(this.inmuebleObjeto.images)},3000);
       
      
    
@@ -66,6 +68,7 @@ export class InmuebleComponent implements OnInit {
       this.router.navigate(["/404"])
       if(this.inmuebleObjeto.images!=null)
       {
+        console.log(this.inmuebleObjeto.images);
         if(this.inmuebleObjeto.images[0]!=null)
           this.img=this.inmuebleObjeto.images;
       }
