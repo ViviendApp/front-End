@@ -96,3 +96,20 @@ textarea {
     -moz-transition: all 0.075s;
     transition: all 0.075s;
 }
+.boton{
+    height: 50px;
+    width: 150px;
+    background: var(--color-morado);
+}
+.boton {
+    background-position: center;
+    transition: background 0.8s;
+  }
+  .boton:hover {
+    background: rgba(255,235,0,.7) radial-gradient(circle, transparent 1%,rgba(255,235,0,.7) 1%) center/15000%;
+  }
+  .boton:active {
+    background-color: rgba(255,235,0,.7);
+    background-size: 100%;
+    transition: background 0s;
+  }
