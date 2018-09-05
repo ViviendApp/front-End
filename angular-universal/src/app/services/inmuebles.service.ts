@@ -170,5 +170,22 @@ export class InmueblesService {
         return this.inmueblesCF.doc(inmueble.postID).delete();
     }
     
+    hashear(texto:string) : string{
+        var today = new Date();
+        var d = today.getDate();
+        texto+=today.getHours()+today.getMinutes()+today.getDay()+today.getMilliseconds()+today.getMonth()+today.getFullYear();
+        var hash ;
+        if (texto.length == 0) {
+            return '0';
+        }
+        for (var i = 0; i < texto.length; i++) {
+            var char = texto.charCodeAt(i);
+            hash = ((hash<<5)-hash)+char;
+            hash = hash & hash; // Convert to 32bit integer
+        }
+        if(hash<0)
+            hash=-hash;
+        return hash;
+    }
      
 }
