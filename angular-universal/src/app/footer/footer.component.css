@@ -12,10 +12,10 @@ footer{
 .column{
     color: #fff;
     width:33.333%;
-    padding: 10vh;
+    padding: 3vh;
 }
 .column h3{
-    font-size: 2em;
+    font-size: 1.5vw;
     padding: 0 0 10px 0;
 }
 .column ul{
@@ -24,6 +24,7 @@ footer{
 }
 .column ul li{
     padding: 0 0 3px 0;
+    font-size: 1vw;
     text-decoration: none;
     display: block;
     margin-top: 5px;
@@ -34,4 +35,8 @@ footer{
 }
 .column img{
     max-width: 22vw;
+}
+.redSocial{
+    width: 2vw;
+    margin-right: 1.2vw;
 }

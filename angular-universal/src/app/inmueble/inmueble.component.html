@@ -8,8 +8,6 @@
                         <ul *ngIf="(this.esDeUsuario | async)&&!editando">
                         <li (click)="editar()">Editar
                             </li>
-                            <li (click)="cancelarEdicion()"><button *ngIf="(this.esDeUsuario | async)&&editando" >Cancelar</button> 
-                            </li>
                             <li (click)="eliminar()">Eliminar
                             </li>
                         </ul>      

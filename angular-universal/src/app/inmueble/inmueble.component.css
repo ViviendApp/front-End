@@ -71,7 +71,7 @@ button.ripple{
     left: auto;
     top: 2em;
     background: #fff;
-    color:#22FFC5;
+    color:rgb(26, 194, 149);
     transition: all 0.3s ease;
     -webkit-transform: scale(0);
             transform: scale(0);
@@ -80,7 +80,8 @@ button.ripple{
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 8px 0 rgba(0, 0, 0, 0.12);
   }
   .drop ul li {
-    font-size: 1.7em;
+    font-size: 1em;
+    padding: 10pt;
     display: block;
     width: 100%;
   }
