@@ -106,3 +106,6 @@ div.boton{
     background-size: 100%;
     transition: background 0s;
   }
+  textarea{
+      resize:none;
+  }

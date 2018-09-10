@@ -1,7 +1,7 @@
 export interface IInmueble{
     postID : string;
     date : string;
-    desc ?: {comoditics: string , info : string};
+    desc : string;
     email : string;
     images : string[];
     phone : number;

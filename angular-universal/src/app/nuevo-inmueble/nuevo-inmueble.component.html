@@ -26,8 +26,8 @@
                                 <label for="precio" class="form__label">Precio</label>
                         </div>
                         <div class="form__group">
-                                <input type="text" id="postID" class="form__field" placeholder="Titulo de la publicación" [(ngModel)]="inmueble.postID">
-                                <label for="postID" class="form__label" >PROVISIONAL postID</label>
+                                <textarea maxlength="200" name="" id="" cols="10" rows="3" id="desc" class="form__field" placeholder="Titulo de la publicación" [(ngModel)]="inmueble.desc"></textarea>
+                                <label for="desc" class="form__label" >Descripcion</label>
                         </div>
                         <div class="boton"> 
                             <button class="ripple" (click)="publicarCF()">Publicar Cloud firestore</button>

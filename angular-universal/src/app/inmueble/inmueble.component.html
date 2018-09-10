@@ -21,7 +21,8 @@
             
         </div>
         <div class="main-info">
-                
+                <span *ngIf="!editando"> {{inmuebleObjeto?.desc}}</span>
+                <input type="text" *ngIf="editando" [(ngModel)]="inmuebleEditado.desc"> 
                 <ul>
                     <li >Direccion:
                         <span *ngIf="!editando"> {{inmuebleObjeto?.place}}</span>

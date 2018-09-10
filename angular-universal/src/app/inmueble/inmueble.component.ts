@@ -113,7 +113,8 @@ export class InmuebleComponent implements OnInit {
       price:this.inmuebleObjeto.price,
       sold:this.inmuebleObjeto.sold,
       title:this.inmuebleObjeto.title,
-      userID:this.inmuebleObjeto.userID
+      userID:this.inmuebleObjeto.userID,
+      desc:this.inmuebleObjeto.desc
     }
     
     this.editando=true;

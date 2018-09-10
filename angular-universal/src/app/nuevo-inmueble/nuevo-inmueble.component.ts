@@ -23,7 +23,7 @@ export class NuevoInmuebleComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.authS.getUserObservable.subscribe((user)=>{
-      this.inmueble = {images:[],postID:this.inmueblesS.hashear(user.uid)+'',date:this.obtenerFecha(),email : this.authS.getUserObject().email, phone : 0, place : '', price : 0, sold : false, title : '', userID : this.authS.getUserObject().uid}
+      this.inmueble = {images:[],postID:this.inmueblesS.hashear(user.uid)+'',date:this.obtenerFecha(),email : this.authS.getUserObject().email, phone : 0, place : '', price : 0, sold : false, title : '', userID : this.authS.getUserObject().uid, desc:""}
     });
     
   }
